@@ -1,5 +1,6 @@
 
 import App from "@/App";
+import NotFoundPage from "@/components/NotFoundPage";
 import AboutUs from "@/components/website/Home/AboutUs";
 import AmritMahotsavPage from "@/components/website/Home/Article/AmritMahotsavPage";
 import EkBharatShreshthaBharatPage from "@/components/website/Home/Article/EkBharatShreshthaBharatPage";
@@ -29,12 +30,14 @@ const router = createBrowserRouter(
         <Route path="/about-us" element={<AboutUs />} />
 
 
-
+        {/* Top Badge Banner routers */}
         <Route path="/amrit-mahotsav-article" element={<AmritMahotsavPage />} />
         <Route path="/national-education-policy" element={<NationalEducationPolicy />} />
         <Route path="/ek-bharat" element={<EkBharatShreshthaBharatPage />} />
         <Route path="/fit-india" element={<FitIndiaMovementPage />} />
         <Route path="/g-20-india" element={<G20India2023Page />} />
+
+        <Route path="/*" element={<NotFoundPage />} />
       </Route>
     </>
   )

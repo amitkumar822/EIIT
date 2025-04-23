@@ -3,7 +3,6 @@ import TopBadgeBanner from "@/layouts/TopBadgeBanner";
 import React from "react";
 import ProgramOverview from "./ProgramOverview";
 import ProgramEligibility from "@/components/website/Home/ProgramEligibility";
-import Footer from "@/layouts/Footer";
 
 const HomePage = () => {
   return (
@@ -12,7 +11,6 @@ const HomePage = () => {
       <HeroSection />
       <ProgramOverview />
       <ProgramEligibility />
-      <Footer />
     </>
   );
 };

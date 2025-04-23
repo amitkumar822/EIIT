@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -23,7 +24,23 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
         {/* University Info */}
         <div>
-          <h3 className="text-2xl font-bold mb-3">My University</h3>
+          {/* Logo */}
+        <Link
+          to="/"
+          className="text-xl font-bold flex gap-2 mb-3 items-center text-yellow-300"
+        >
+          <img
+            className="w-9 h-9 -my-2 rounded-full"
+            src="./eiit-logo.svg"
+            alt="eiit"
+          />
+          <span className="tracking-wide">
+            E.<span className="text-red-400">I.</span>
+            <span className="text-green-400">I.</span>
+            <span className="text-blue-400">T</span>
+          </span>
+        </Link>
+          <h3 className="font-semibold mb-3 text-yellow-300 underline">EduSphere Institute of Information Technology</h3>
           <p className="text-sm text-sky-100">
             Empowering future leaders through innovative education and inclusive learning.
           </p>
@@ -65,7 +82,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="mt-8 border-t border-sky-600 pt-4 flex flex-col md:flex-row items-center justify-between text-sm text-sky-200">
-        <p>© {new Date().getFullYear()} My University. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} WebAnd. All rights reserved.</p>
         <div className="flex space-x-4 mt-4 md:mt-0">
           <a href="#"><Facebook size={18} className="hover:text-yellow-400" /></a>
           <a href="#"><Twitter size={18} className="hover:text-yellow-400" /></a>
