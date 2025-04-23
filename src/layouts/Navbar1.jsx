@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Facilities", link: "/facilites" },
 ];
 
-export default function Navbar() {
+export default function Navbar1() {
   // Mobile menu toggle state
   const [isOpen, setIsOpen] = useState(false);
   // Mobile dropdown toggle state for Academics

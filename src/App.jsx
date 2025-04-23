@@ -1,11 +1,6 @@
 import React from "react";
-import Navbar from "./components/Home/Navbar";
-import TopBadgeBanner from "./pages/home/TopBadgeBanner";
-import ProgramOverview from "./pages/home/ProgramOverview";
-import { WhyChooseUS } from "./pages/home/WhyChoseUS";
-import ContactUs from "./pages/home/ContactUs";
-import FacilitiesPage from "./pages/home/FacilitiesPage";
 import { Outlet } from "react-router";
+import { Navbar } from "./layouts/Navbar";
 
 const App = () => {
   return (

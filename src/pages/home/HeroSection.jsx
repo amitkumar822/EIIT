@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion, useAnimation } from "framer-motion";
 import LatestVideoView from "./LatestVideView";
+import { AdvancedCarousel, Carousel } from "@/layouts/Carousel";
 
 const notifications = [
   "Office Order reg. Appointment of Prof. Ranjeet Kumar Choudhary...",
@@ -123,20 +124,22 @@ export default function HeroSection() {
 
         {/* Center Image Banner */}
         <div className="w-full lg:w-[56%] relative rounded-md overflow-hidden shadow-md flex flex-col items-center justify-center gap-4">
-          {/* <motion.div
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="w-full"
           >
-            <img
+            {/* <Carousel /> */}
+            <AdvancedCarousel />
+
+            {/* <img
               src="https://mgcub.ac.in/images/slider/09102023_5.jpg"
               alt="Convocation Ceremony"
               className="w-full h-full object-cover rounded-md"
-            />
-          </motion.div> */}
-
-          <LatestVideoView />
+            /> */}
+          </motion.div>
+          {/* <LatestVideoView /> */}
         </div>
 
         {/* Right News */}
