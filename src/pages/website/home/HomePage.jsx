@@ -1,16 +1,14 @@
+import HeroSection from "@/layouts/HeroSection";
+import TopBadgeBanner from "@/layouts/TopBadgeBanner";
 import React from "react";
-import HeroSection from "./HeroSection";
-import TopBadgeBanner from "./TopBadgeBanner";
 import ProgramOverview from "./ProgramOverview";
+import ProgramEligibility from "@/components/website/Home/ProgramEligibility";
 import Footer from "@/layouts/Footer";
-import ProgramEligibility from "@/components/Home/ProgramEligibility";
-import { Carousel } from "@/layouts/Carousel";
 
 const HomePage = () => {
   return (
     <>
       <TopBadgeBanner />
-      
       <HeroSection />
       <ProgramOverview />
       <ProgramEligibility />

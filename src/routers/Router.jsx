@@ -1,21 +1,21 @@
 
 import App from "@/App";
-import ContactUs from "@/pages/home/ContactUs";
-import FacilitiesPage from "@/pages/home/FacilitiesPage";
-import HomePage from "@/pages/home/homePage";
-import LibraryPage from "@/components/Home/LibraryPage";
+import AboutUs from "@/components/website/Home/AboutUs";
+import AmritMahotsavPage from "@/components/website/Home/Article/AmritMahotsavPage";
+import EkBharatShreshthaBharatPage from "@/components/website/Home/Article/EkBharatShreshthaBharatPage";
+import FitIndiaMovementPage from "@/components/website/Home/Article/FitIndiaMovementPage";
+import G20India2023Page from "@/components/website/Home/Article/G20India2023Page";
+import NationalEducationPolicy from "@/components/website/Home/Article/NationalEducationPolicy";
+import LibraryPage from "@/components/website/Home/LibraryPage";
+import LoginPage from "@/components/website/Home/Login";
+import ContactUs from "@/pages/website/home/ContactUs";
+import FacilitiesPage from "@/pages/website/home/FacilitiesPage";
+import HomePage from "@/pages/website/home/HomePage";
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
-import AboutUs from "@/components/Home/AboutUs";
-import LoginPage from "@/components/Home/Login";
-import AmritMahotsavPage from "@/components/Home/Article/AmritMahotsavPage";
-import NationalEducationPolicy from "@/components/Home/Article/NationalEducationPolicy";
-import EkBharatShreshthaBharatPage from "@/components/Home/Article/EkBharatShreshthaBharatPage";
-import FitIndiaMovementPage from "@/components/Home/Article/FitIndiaMovementPage";
-import G20India2023Page from "@/components/Home/Article/G20India2023Page";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
