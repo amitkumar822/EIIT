@@ -1,8 +1,16 @@
 // Responsive Navbar with Icons, Notification, Submenus and Dropdowns
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight, Languages } from "lucide-react";
 import { Link } from "react-router";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
+import { GoogleTranslate } from "@/components/GoogleTranslate";
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -49,7 +57,7 @@ export const Navbar = () => {
       </div>
 
       {/* Navbar */}
-      <nav className=" px-4 py-3 flex md:justify-evenly justify-between items-center bg-blue-900">
+      <nav className="px-4 py-3 flex justify-between items-center bg-blue-900">
         {/* Logo */}
         <Link
           to="/"
@@ -155,6 +163,20 @@ export const Navbar = () => {
             </div>
           ))}
         </ul>
+
+        <div className="hidden md:flex">
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger className="flex items-center space-x-2 justify-center">
+                <Languages className="w-5 h-5 text-white" />
+                <GoogleTranslate />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Google Translate</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
