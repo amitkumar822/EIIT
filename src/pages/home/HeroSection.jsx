@@ -2,8 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion, useAnimation } from "framer-motion";
-import LatestVideoView from "./LatestVideView";
-import { AdvancedCarousel, Carousel } from "@/layouts/Carousel";
+import { Carousel } from "@/layouts/Carousel";
 
 const notifications = [
   "Office Order reg. Appointment of Prof. Ranjeet Kumar Choudhary...",
@@ -130,8 +129,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
             className="w-full"
           >
-            {/* <Carousel /> */}
-            <AdvancedCarousel />
+            <Carousel />
 
             {/* <img
               src="https://mgcub.ac.in/images/slider/09102023_5.jpg"
