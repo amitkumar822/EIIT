@@ -14,12 +14,25 @@ import {
 import { CalendarDays, User, Mail, Phone, GraduationCap } from "lucide-react";
 
 const computerCourses = [
-  "RS-CIT", "CCC", "DFA", "TALLY", "ADCA", "CCB",
-  "ADFA", "CFA", "MS-OFFICE", "RS-CFA", "RS-CSEP"
+  "RS-CIT",
+  "CCC",
+  "DFA",
+  "TALLY",
+  "ADCA",
+  "CCB",
+  "ADFA",
+  "CFA",
+  "MS-OFFICE",
+  "RS-CFA",
+  "RS-CSEP",
 ];
 
 const vocationalCourses = [
-  "NTT", "Fire & Safety", "YTT", "ECCE", "SILAI CERTIFICATE"
+  "NTT",
+  "Fire & Safety",
+  "YTT",
+  "ECCE",
+  "SILAI CERTIFICATE",
 ];
 
 const allCourses = [...computerCourses, ...vocationalCourses];
@@ -43,7 +56,10 @@ export default function StudentJoinedSection() {
               <stop offset="100%" stopColor="#0ea5e9" />
             </linearGradient>
           </defs>
-          <path fill="url(#blobGradient)" d="M0,100 C150,200 350,0 800,100 L800,400 L0,400 Z"></path>
+          <path
+            fill="url(#blobGradient)"
+            d="M0,100 C150,200 350,0 800,100 L800,400 L0,400 Z"
+          ></path>
         </svg>
       </div>
 
@@ -58,17 +74,37 @@ export default function StudentJoinedSection() {
         </motion.h2>
 
         <p className="text-center text-lg md:text-xl max-w-3xl mx-auto mb-12 text-blue-100">
-          Explore the transformative journey of our students with practical, certified training.
+          Explore the transformative journey of our students with practical,
+          certified training.
         </p>
 
-        {/* Tags Cloud */}
-        <div className="flex flex-wrap justify-center gap-3 mb-16">
+        {/* Floating Badges Cloud */}
+        <motion.div
+          className="flex flex-wrap justify-center gap-3 mb-16"
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.05,
+              },
+            },
+          }}
+        >
           {allCourses.map((course) => (
-            <Badge key={course} className="text-sm px-4 py-1 bg-white/10 border border-white/20 text-white/90 backdrop-blur-md">
-              {course}
-            </Badge>
+            <motion.div
+              key={course}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
+              <Badge className="text-sm px-4 py-1 border-white/20 text-white/90 bg-white/5 backdrop-blur-md">
+                {course}
+              </Badge>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Form Card with SVG image */}
         <motion.div
@@ -93,18 +129,40 @@ export default function StudentJoinedSection() {
           <form onSubmit={handleSubmit(onSubmit)} className="relative z-10">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="relative">
-                <Label htmlFor="name" className="text-white flex items-center gap-2"><User size={18} /> Name</Label>
-                <Input id="name" {...register("name", { required: true })} placeholder="Enter full name" className="text-black bg-white mt-1" />
+                <Label
+                  htmlFor="name"
+                  className="text-white flex items-center gap-2"
+                >
+                  <User size={18} /> Name
+                </Label>
+                <Input
+                  id="name"
+                  {...register("name", { required: true })}
+                  placeholder="Enter full name"
+                  className="text-black bg-white mt-1"
+                />
               </div>
 
               <div className="relative">
-                <Label htmlFor="joinedOn" className="text-white flex items-center gap-2"><CalendarDays size={18} /> Joined On</Label>
-                <Input type="date" id="joinedOn" {...register("joinedOn", { required: true })} className="text-black bg-white mt-1" />
+                <Label
+                  htmlFor="joinedOn"
+                  className="text-white flex items-center gap-2"
+                >
+                  <CalendarDays size={18} /> Joined On
+                </Label>
+                <Input
+                  type="date"
+                  id="joinedOn"
+                  {...register("joinedOn", { required: true })}
+                  className="text-black bg-white mt-1"
+                />
               </div>
             </div>
 
             <div className="mt-6">
-              <Label className="text-white flex items-center gap-2"><GraduationCap size={18} /> Select Course</Label>
+              <Label className="text-white flex items-center gap-2">
+                <GraduationCap size={18} /> Select Course
+              </Label>
               <Controller
                 control={control}
                 name="courses"
@@ -115,7 +173,9 @@ export default function StudentJoinedSection() {
                     </SelectTrigger>
                     <SelectContent>
                       {allCourses.map((course) => (
-                        <SelectItem key={course} value={course}>{course}</SelectItem>
+                        <SelectItem key={course} value={course}>
+                          {course}
+                        </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -125,12 +185,32 @@ export default function StudentJoinedSection() {
 
             <div className="grid md:grid-cols-2 gap-6 mt-6">
               <div className="relative">
-                <Label htmlFor="email" className="text-white flex items-center gap-2"><Mail size={18} /> Email</Label>
-                <Input id="email" {...register("email")} placeholder="example@eiit.com" className="text-black bg-white mt-1" />
+                <Label
+                  htmlFor="email"
+                  className="text-white flex items-center gap-2"
+                >
+                  <Mail size={18} /> Email
+                </Label>
+                <Input
+                  id="email"
+                  {...register("email")}
+                  placeholder="example@eiit.com"
+                  className="text-black bg-white mt-1"
+                />
               </div>
               <div className="relative">
-                <Label htmlFor="phone" className="text-white flex items-center gap-2"><Phone size={18} /> Phone</Label>
-                <Input id="phone" {...register("phone")} placeholder="9876543210" className="text-black bg-white mt-1" />
+                <Label
+                  htmlFor="phone"
+                  className="text-white flex items-center gap-2"
+                >
+                  <Phone size={18} /> Phone
+                </Label>
+                <Input
+                  id="phone"
+                  {...register("phone")}
+                  placeholder="9876543210"
+                  className="text-black bg-white mt-1"
+                />
               </div>
             </div>
 
