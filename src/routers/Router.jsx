@@ -1,7 +1,6 @@
 
 import App from "@/App";
 import NotFoundPage from "@/components/NotFoundPage";
-import AboutUs from "@/components/website/Home/AboutUs";
 import AmritMahotsavPage from "@/components/website/Home/Article/AmritMahotsavPage";
 import EkBharatShreshthaBharatPage from "@/components/website/Home/Article/EkBharatShreshthaBharatPage";
 import FitIndiaMovementPage from "@/components/website/Home/Article/FitIndiaMovementPage";
@@ -17,12 +16,17 @@ import CFACoursePage from "@/pages/website/courses/Computer_Center/CFACoursePage
 import DFACoursePage from "@/pages/website/courses/Computer_Center/DFACoursePage";
 import MSOfficeCoursePage from "@/pages/website/courses/Computer_Center/MSOfficeCoursePage";
 import { RS_CITPage } from "@/pages/website/courses/Computer_Center/RS_CITPage";
+import RSCFACoursePage from "@/pages/website/courses/Computer_Center/RSCFACoursePage";
+import RSCSEPCoursePage from "@/pages/website/courses/Computer_Center/RSCSEPCoursePage";
 import TallyCoursePage from "@/pages/website/courses/Computer_Center/TallyCoursePage";
 import ECCECoursePage from "@/pages/website/courses/vocational_Courses/ECCECoursePage";
 import FireSafetyCoursePage from "@/pages/website/courses/vocational_Courses/FireSafetyCoursePage";
 import NTTCoursePage from "@/pages/website/courses/vocational_Courses/NTTCoursePage";
 import SilaiCertificatePage from "@/pages/website/courses/vocational_Courses/SilaiCertificatePage";
 import YTTCoursePage from "@/pages/website/courses/vocational_Courses/YTTCoursePage";
+import GalleryPage from "@/pages/website/about/GalleryPage";
+import About from "@/pages/website/home/About";
+
 import ContactUs from "@/pages/website/home/ContactUs";
 import FacilitiesPage from "@/pages/website/home/FacilitiesPage";
 import HomePage from "@/pages/website/home/HomePage";
@@ -31,6 +35,7 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
+import TestimonialsPage from "@/pages/website/about/TestimonialsPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -41,7 +46,9 @@ const router = createBrowserRouter(
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/facilites" element={<FacilitiesPage />} />
         <Route path="/library" element={<LibraryPage />} />
-        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/testimonial" element={<TestimonialsPage />} />
 
         {/* Computer Ceneter or courses routes */}
         <Route path="/computer-courses/rs-cit" element={<RS_CITPage />} />
@@ -53,6 +60,8 @@ const router = createBrowserRouter(
         <Route path="/computer-courses/adfa" element={<ADFACoursePage />} />
         <Route path="/computer-courses/cfa" element={<CFACoursePage />} />
         <Route path="/computer-courses/ms-office" element={<MSOfficeCoursePage />} />
+        <Route path="/computer-courses/rs-cfa" element={<RSCFACoursePage />} />
+        <Route path="/computer-courses/rs-csep" element={<RSCSEPCoursePage />} />
         
         {/* vocational courses */}
         <Route path="/vocational-courses/ntt" element={<NTTCoursePage />} />

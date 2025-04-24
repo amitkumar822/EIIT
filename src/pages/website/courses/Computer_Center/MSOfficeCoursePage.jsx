@@ -189,7 +189,7 @@ const MSOfficeCoursePage = () => {
               </Button>
               <Button
                 variant="outline"
-                className="px-8 py-4 text-lg border-white text-white hover:bg-white hover:text-blue-800 rounded-xl transition-all duration-300 shadow-md"
+                className="px-8 py-4 text-lg border-white text-black hover:bg-white hover:text-blue-800 rounded-xl transition-all duration-300 shadow-md"
               >
                 Free Demo Class
               </Button>
@@ -506,7 +506,7 @@ const MSOfficeCoursePage = () => {
               </Button>
               <Button
                 variant="outline"
-                className="px-8 py-6 text-lg border-white text-white hover:bg-white hover:text-blue-600"
+                className="px-8 py-6 text-lg border-white text-black/70 hover:bg-white hover:text-blue-600"
               >
                 Contact Us
               </Button>
