@@ -300,8 +300,8 @@ const navItems = [
   {
     label: "Study Center",
     submenu: [
-      { title: "Apply", navLink: "/apply" },
-      { title: "Most", navLink: "/most" },
+      { title: "Apply", navLink: "/study-center/apply" },
+      { title: "Most", navLink: "/study-center/most" },
     ],
   },
   { label: "Contact Us", navLink: "/contact-us" },
