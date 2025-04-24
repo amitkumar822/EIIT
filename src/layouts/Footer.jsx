@@ -62,7 +62,7 @@ const Footer = () => {
           <h4 className="text-xl font-semibold mb-3">Contact</h4>
           <ul className="text-sky-100 text-sm space-y-2">
             <li className="flex items-center gap-2"><MapPin size={16} /> Patna, Bihar, India</li>
-            <li className="flex items-center gap-2"><Phone size={16} /> +91 9876543210</li>
+            <li className="flex items-center gap-2"><Phone size={16} /> +91 72310 41011</li>
             <li className="flex items-center gap-2"><Mail size={16} /> info@myuniversity.edu.in</li>
           </ul>
         </div>

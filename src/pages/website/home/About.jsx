@@ -387,10 +387,10 @@ const About = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-blue-900">
-                    Shri Har Datt Singh
+                    Har Datt Singh
                   </h3>
                   <p className="text-blue-600 font-medium">
-                    Founder & Chairman
+                    Founder & CEO
                   </p>
                 </div>
               </div>
@@ -399,10 +399,10 @@ const About = () => {
                 through technical education.
               </p>
               <div className="text-sm text-blue-800">
-                <div className="flex items-center mb-1">
+                <a href="tel: +91 72310 41011" className="flex items-center mb-1">
                   <Phone className="w-4 h-4 mr-2" />
-                  +91 97725 12901
-                </div>
+                  +91 72310 41011
+                </a>
                 <div className="flex items-center">
                   <Mail className="w-4 h-4 mr-2" />
                   eduspheresidhmukh@gmail.com
@@ -611,78 +611,83 @@ const About = () => {
       </section> */}
 
       {/* **Enhanced FAQ Section** */}
-<section className="py-24 bg-gradient-to-br from-[#F0F9FF] via-[#E0F2FE] to-[#DBEAFE]">
-  <div className="container mx-auto px-6">
-    <div className="text-center mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-        Frequently Asked Questions
-      </h2>
-      <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-        Answers to common questions about EIIT
-      </p>
-    </div>
+      <section className="py-24 bg-gradient-to-br from-[#F0F9FF] via-[#E0F2FE] to-[#DBEAFE]">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              Answers to common questions about EIIT
+            </p>
+          </div>
 
-    <div className="relative max-w-3xl mx-auto">
-    <svg
-            className="absolute -top-10 -left-10 w-32 opacity-10"
-            viewBox="0 0 200 200"
-          >
-            <path
-              fill="#a5b4fc"
-              d="M50,-57.7C64.6,-47.2,75.5,-32,75.4,-17.5C75.4,-3,64.3,11,54.1,24.1C43.9,37.2,34.6,49.4,22.3,56.7C10.1,64,-5.1,66.5,-19.3,61.8C-33.6,57.2,-46.9,45.5,-55.1,31.5C-63.4,17.5,-66.5,1.3,-64.7,-14.1C-62.9,-29.6,-56.3,-44.2,-44.4,-55.3C-32.4,-66.4,-16.2,-74.1,-0.4,-73.6C15.3,-73.1,30.6,-64.3,50,-57.7Z"
-              transform="translate(100 100)"
-            />
-          </svg>
-      {/* <img
+          <div className="relative max-w-3xl mx-auto">
+            <svg
+              className="absolute -top-10 -left-10 w-32 opacity-10"
+              viewBox="0 0 200 200"
+            >
+              <path
+                fill="#a5b4fc"
+                d="M50,-57.7C64.6,-47.2,75.5,-32,75.4,-17.5C75.4,-3,64.3,11,54.1,24.1C43.9,37.2,34.6,49.4,22.3,56.7C10.1,64,-5.1,66.5,-19.3,61.8C-33.6,57.2,-46.9,45.5,-55.1,31.5C-63.4,17.5,-66.5,1.3,-64.7,-14.1C-62.9,-29.6,-56.3,-44.2,-44.4,-55.3C-32.4,-66.4,-16.2,-74.1,-0.4,-73.6C15.3,-73.1,30.6,-64.3,50,-57.7Z"
+                transform="translate(100 100)"
+              />
+            </svg>
+            {/* <img
         src="/svg/faq-bg-blob.svg"
         alt="decor"
         className="absolute -top-10 -left-10 w-32 opacity-10"
       /> */}
-      <Accordion type="single" collapsible className="w-full space-y-4 relative z-10">
-        {[
-          {
-            question: "Is EIIT government recognized?",
-            answer:
-              "Yes, we are an ISO 9001:2015 certified institute and our courses are recognized by UGC, Ministry of AYUSH (for Yoga courses), and affiliated with CBSE for NTT.",
-          },
-          {
-            question: "What's the duration of courses?",
-            answer:
-              "Course durations vary: Yoga (1-2 years), NTT (1 year), Computer courses (3-12 months), Fire & Safety (6 months), and ECCE (1 year).",
-          },
-          {
-            question: "Do you provide placement assistance?",
-            answer:
-              "Yes, we have 100% placement assistance for technical courses like Fire & Safety and Computer courses. For other courses, we provide career guidance.",
-          },
-          {
-            question: "Where is your campus located?",
-            answer:
-              "Our head office is at Old Market, Near Ration Depot, Sidhmukh (Rajgarh). We also have affiliated centers in multiple locations.",
-          },
-        ].map((faq, index) => (
-          <Card
-            key={index}
-            className="bg-white/90 border-0 shadow-md hover:shadow-lg transition rounded-xl overflow-hidden"
-          >
-            <AccordionItem value={`faq-${index}`}>
-              <AccordionTrigger className="px-6 py-5 text-left hover:no-underline text-gray-800">
-                <div className="flex items-center">
-                  <MessageSquare className="text-blue-600 mr-3 w-5 h-5" />
-                  <span className="font-semibold text-md">{faq.question}</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="px-6 pb-5 pl-12 text-gray-700">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          </Card>
-        ))}
-      </Accordion>
-    </div>
-  </div>
-</section>
-
+            <Accordion
+              type="single"
+              collapsible
+              className="w-full space-y-4 relative z-10"
+            >
+              {[
+                {
+                  question: "Is EIIT government recognized?",
+                  answer:
+                    "Yes, we are an ISO 9001:2015 certified institute and our courses are recognized by UGC, Ministry of AYUSH (for Yoga courses), and affiliated with CBSE for NTT.",
+                },
+                {
+                  question: "What's the duration of courses?",
+                  answer:
+                    "Course durations vary: Yoga (1-2 years), NTT (1 year), Computer courses (3-12 months), Fire & Safety (6 months), and ECCE (1 year).",
+                },
+                {
+                  question: "Do you provide placement assistance?",
+                  answer:
+                    "Yes, we have 100% placement assistance for technical courses like Fire & Safety and Computer courses. For other courses, we provide career guidance.",
+                },
+                {
+                  question: "Where is your campus located?",
+                  answer:
+                    "Our head office is at Old Market, Near Ration Depot, Sidhmukh (Rajgarh). We also have affiliated centers in multiple locations.",
+                },
+              ].map((faq, index) => (
+                <Card
+                  key={index}
+                  className="bg-white/90 border-0 shadow-md hover:shadow-lg transition rounded-xl overflow-hidden"
+                >
+                  <AccordionItem value={`faq-${index}`}>
+                    <AccordionTrigger className="px-6 py-5 text-left hover:no-underline text-gray-800">
+                      <div className="flex items-center">
+                        <MessageSquare className="text-blue-600 mr-3 w-5 h-5" />
+                        <span className="font-semibold text-md">
+                          {faq.question}
+                        </span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-5 pl-12 text-gray-700">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                </Card>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
