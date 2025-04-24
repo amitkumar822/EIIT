@@ -15,10 +15,14 @@ import { CCBCoursePage } from "@/pages/website/courses/Computer_Center/CCBCourse
 import { CCCCoursePage } from "@/pages/website/courses/Computer_Center/CCCCoursePage";
 import CFACoursePage from "@/pages/website/courses/Computer_Center/CFACoursePage";
 import DFACoursePage from "@/pages/website/courses/Computer_Center/DFACoursePage";
+import MSOfficeCoursePage from "@/pages/website/courses/Computer_Center/MSOfficeCoursePage";
 import { RS_CITPage } from "@/pages/website/courses/Computer_Center/RS_CITPage";
 import TallyCoursePage from "@/pages/website/courses/Computer_Center/TallyCoursePage";
+import ECCECoursePage from "@/pages/website/courses/vocational_Courses/ECCECoursePage";
 import FireSafetyCoursePage from "@/pages/website/courses/vocational_Courses/FireSafetyCoursePage";
 import NTTCoursePage from "@/pages/website/courses/vocational_Courses/NTTCoursePage";
+import SilaiCertificatePage from "@/pages/website/courses/vocational_Courses/SilaiCertificatePage";
+import YTTCoursePage from "@/pages/website/courses/vocational_Courses/YTTCoursePage";
 import ContactUs from "@/pages/website/home/ContactUs";
 import FacilitiesPage from "@/pages/website/home/FacilitiesPage";
 import HomePage from "@/pages/website/home/HomePage";
@@ -48,10 +52,14 @@ const router = createBrowserRouter(
         <Route path="/computer-courses/ccb" element={<CCBCoursePage />} />
         <Route path="/computer-courses/adfa" element={<ADFACoursePage />} />
         <Route path="/computer-courses/cfa" element={<CFACoursePage />} />
+        <Route path="/computer-courses/ms-office" element={<MSOfficeCoursePage />} />
         
         {/* vocational courses */}
         <Route path="/vocational-courses/ntt" element={<NTTCoursePage />} />
         <Route path="/vocational-courses/fire-safty" element={<FireSafetyCoursePage />} />
+        <Route path="/vocational-courses/ytt" element={<YTTCoursePage />} />
+        <Route path="/vocational-courses/ecce" element={<ECCECoursePage />} />
+        <Route path="/vocational-courses/silai-certificate" element={<SilaiCertificatePage />} />
 
 
 
