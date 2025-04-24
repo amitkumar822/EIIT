@@ -9,6 +9,8 @@ import G20India2023Page from "@/components/website/Home/Article/G20India2023Page
 import NationalEducationPolicy from "@/components/website/Home/Article/NationalEducationPolicy";
 import LibraryPage from "@/components/website/Home/LibraryPage";
 import LoginPage from "@/components/website/Home/Login";
+import { ADCAPage } from "@/pages/website/courses/AdcaPage";
+import TallyCoursePage from "@/pages/website/courses/TallyCoursePage";
 import ContactUs from "@/pages/website/home/ContactUs";
 import FacilitiesPage from "@/pages/website/home/FacilitiesPage";
 import HomePage from "@/pages/website/home/HomePage";
@@ -28,6 +30,11 @@ const router = createBrowserRouter(
         <Route path="/facilites" element={<FacilitiesPage />} />
         <Route path="/library" element={<LibraryPage />} />
         <Route path="/about-us" element={<AboutUs />} />
+
+        {/* All Courses routes */}
+        <Route path="/computer-courses/adca" element={<ADCAPage />} />
+        <Route path="/computer-courses/tally" element={<TallyCoursePage />} />
+
 
 
         {/* Top Badge Banner routers */}
