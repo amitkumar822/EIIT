@@ -108,12 +108,7 @@ export default function HeroSection() {
     <div className="w-full mx-auto pb-10">
       {/* Header Top Notification */}
       <div className="bg-white text-red-600 text-sm font-semibold py-1 px-4 flex flex-wrap items-center justify-center border-b border-red-200">
-        <p className="animate-pulse">
-          ➤ Information of CUET (UG)-2025.{" "}
-          <Badge variant="destructive" className="ml-1">
-            new!
-          </Badge>
-        </p>
+        <p className="animate-pulse">➤ information of RSCIT exam April 2025</p>
       </div>
 
       {/* Banner and Content */}

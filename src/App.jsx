@@ -7,7 +7,7 @@ import ScrollToTop from "./utils/ScrollToTopOnMount";
 
 const App = () => {
   return (
-    <div className="w-full h-full  bg-gradient-to-br from-[#e0f7fa] to-[#e1f5fe]">
+    <div className="w-full h-full  bg-gradient-to-br from-[#e0f7fa] to-[#e1f5fe] overflow-hidden">
       <Navbar />
       <main>
         <Outlet />

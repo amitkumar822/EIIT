@@ -23,102 +23,6 @@ import {
 import { Button } from "@/components/ui/button";
 
 const TestimonialsPage = () => {
-  // Testimonial Data (Indian names & companies)
-  const testimonials = [
-    {
-      id: 1,
-      name: "Ritika Kumari",
-      role: "RS-CIT Student",
-      quote:
-        "Before joining RS-CIT at EIIT, I barely knew how to use a computer. Now I can work confidently in MS Office and browse the internet with ease.",
-      rating: 5,
-      category: "student",
-      avatar:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
-    },
-    {
-      id: 2,
-      name: "Mohd. Ayaan",
-      role: "ADCA Student",
-      quote:
-        "ADCA course helped me learn everything from basics to advanced Excel, Tally, and graphic design. Best decision after 12th!",
-      rating: 5,
-      category: "student",
-      avatar:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
-    },
-    {
-      id: 3,
-      name: "Sneha Rajput",
-      role: "TALLY Student",
-      quote:
-        "I joined the Tally course during my commerce stream in Class 11. Now I can handle GST billing and inventory entries confidently.",
-      rating: 4,
-      category: "student",
-      avatar:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
-    },
-    {
-      id: 4,
-      name: "Rohit Meena",
-      role: "CCC Student",
-      quote:
-        "CCC course helped me crack the basic computer knowledge section in a government exam. I highly recommend it to beginners!",
-      rating: 5,
-      category: "student",
-      avatar:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
-    },
-    {
-      id: 5,
-      name: "Kajal Yadav",
-      role: "NTT Trainee",
-      quote:
-        "The NTT course taught me how to manage and teach toddlers professionally. I now work at a reputed preschool in Jaipur.",
-      rating: 5,
-      category: "student",
-      avatar:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
-    },
-    {
-      id: 6,
-      name: "Aman Thakur",
-      role: "Fire & Safety Course Student",
-      quote:
-        "Fire & Safety course gave me practical knowledge and boosted my confidence. I’m preparing for fire officer exams now.",
-      rating: 5,
-      category: "student",
-      avatar:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
-    },
-    {
-      id: 7,
-      name: "Bhavna Singh",
-      role: "ECCE Course Student",
-      quote:
-        "The ECCE course helped me understand child psychology and early education. It’s a great course for aspiring nursery teachers.",
-      rating: 4,
-      category: "student",
-      avatar:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
-    },
-    {
-      id: 8,
-      name: "Sahil Jangid",
-      role: "MS-OFFICE Course Student",
-      quote:
-        "Learning MS Word, Excel, and PowerPoint at EIIT was fun and easy. It’s now helping me in my school projects and assignments!",
-      rating: 5,
-      category: "student",
-      avatar:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
-    },
-  ];
-
-  const studentTestimonials = testimonials.filter(
-    (t) => t.category === "student"
-  );
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50">
       {/* Hero Section (Indian Theme) */}
@@ -182,7 +86,7 @@ const TestimonialsPage = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
-          {studentTestimonials.map((testimonial) => (
+          {testimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.id} testimonial={testimonial} />
           ))}
         </div>
@@ -212,6 +116,7 @@ const TestimonialCard = ({ testimonial }) => {
       <CardHeader className="pb-0 relative z-10">
         <div className="flex items-center">
           <img
+           referrerPolicy="no-referrer"
             src={testimonial.avatar}
             alt={testimonial.name}
             className="w-14 h-14 rounded-full object-cover border-2 border-white shadow-md"
@@ -236,7 +141,7 @@ const TestimonialCard = ({ testimonial }) => {
 
       <CardFooter className="relative z-10">
         <div className="flex items-center">
-          {[...Array(testimonial.rating)].map((_, i) => (
+          {[...Array(Math.round(testimonial.rating))].map((_, i) => (
             <Star
               key={i}
               className="text-yellow-400 fill-yellow-400"
@@ -253,3 +158,305 @@ const TestimonialCard = ({ testimonial }) => {
 };
 
 export default TestimonialsPage;
+
+const testimonials = [
+  {
+    id: 1,
+    name: "Ritika Kumari",
+    role: "RS-CIT Student",
+    quote:
+      "Before joining RS-CIT at EIIT, I barely knew how to use a computer. Now I can work confidently in MS Office and browse the internet with ease.",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
+  },
+  {
+    id: 2,
+    name: "Mohd. Ayaan",
+    role: "ADCA Student",
+    quote:
+      "ADCA course helped me learn everything from basics to advanced Excel, Tally, and graphic design. Best decision after 12th!",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
+  },
+  {
+    id: 3,
+    name: "Sneha Rajput",
+    role: "TALLY Student",
+    quote:
+      "I joined the Tally course during my commerce stream in Class 11. Now I can handle GST billing and inventory entries confidently.",
+    rating: 4,
+    category: "student",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
+  },
+  {
+    id: 4,
+    name: "Rohit Meena",
+    role: "CCC Student",
+    quote:
+      "CCC course helped me crack the basic computer knowledge section in a government exam. I highly recommend it to beginners!",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
+  },
+  {
+    id: 5,
+    name: "Kajal Yadav",
+    role: "NTT Trainee",
+    quote:
+      "The NTT course taught me how to manage and teach toddlers professionally. I now work at a reputed preschool in Jaipur.",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
+  },
+  {
+    id: 6,
+    name: "Aman Thakur",
+    role: "Fire & Safety Course Student",
+    quote:
+      "Fire & Safety course gave me practical knowledge and boosted my confidence. I’m preparing for fire officer exams now.",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
+  },
+  {
+    id: 7,
+    name: "Bhavna Singh",
+    role: "ECCE Course Student",
+    quote:
+      "The ECCE course helped me understand child psychology and early education. It’s a great course for aspiring nursery teachers.",
+    rating: 4,
+    category: "student",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
+  },
+  {
+    id: 8,
+    name: "Sahil Jangid",
+    role: "MS-OFFICE Course Student",
+    quote:
+      "Learning MS Word, Excel, and PowerPoint at EIIT was fun and easy. It’s now helping me in my school projects and assignments!",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
+  },
+  {
+    id: 9,
+    name: "Manoj Kumar",
+    role: "Graphic Design Student",
+    quote: "Computer Center And Library Best facility available",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjUL0uWLE_48gQMtx-csX9VH4x3oliLsGRPsl15wDxbNbwHqsSWE=w190-h190-p-rp-mo-ba1-br100",
+  },
+  {
+    id: 10,
+    name: "Shayam Lal",
+    role: " Ecell Student",
+    quote: "Computer Classes And Library Centre",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjXLz12UMXvTBLIyjfilggFwAv1cK1tsQkQnynJTEyskInsbJY0=w190-h190-p-rp-mo-ba1-br100",
+  },
+  {
+    id: 11,
+    name: "Jogendra Singh",
+    role: " Ecell Student",
+    quote: "Computer Center And Computer Classes Academy",
+    rating: 4.5,
+    category: "student",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
+  },
+  {
+    id: 12,
+    name: "Madan Lal",
+    role: " Ecell Student",
+    quote: "Copmuter classes platform Good facilities",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
+  },
+  {
+    id: 12,
+    name: "Ravi Ninania",
+    role: " Library Student",
+    quote: "Computer Center and Library",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
+  },
+  {
+    id: 13,
+    name: "Sachin Beniwal",
+    role: " Library Student",
+    quote:
+      "This place is awesome for self study by having an library seperated for boys and girls. It is computer centre which is seperated for boys and girls .Now a day it has started a batch of Rajasthan Police",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjWkW0EVK02hpTHPRr8-OTf23FM7oumD_EhtjV4tH2zcrA90WPE=w190-h190-p-rp-mo-ba1-br100",
+  },
+  {
+    id: 14,
+    name: "Naresh Kumar",
+    role: "  Student",
+    quote: "Computer Center or Library",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
+  },
+  {
+    id: 15,
+    name: "Vijender Kumar Vijender Kumar",
+    role: " Adca Student",
+    quote: "Education Hub 💯🥰",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s",
+  },
+  {
+    id: 16,
+    name: "Amit Mehra",
+    role: " dca Student",
+    quote: "Education hub",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjXNPiftMTFAYYS1siGrQmGBT1uGMnucQLswHVnrUpyAXV03IA=w190-h190-p-rp-mo-ba1-br100",
+  },
+  {
+    id: 17,
+    name: "Jitesh Kharod",
+    role: " adca Student",
+    quote: "Well discipline in center I love it",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjWnjQ6GO3CtcWdxuicQNDp0Zb4_qoTn7pnIGe7lKoPYYsOzSspl=w90-h90-p-rp-mo-br100",
+  },
+  {
+    id: 17,
+    name: "Jitesh Kharod",
+    role: " adca Student",
+    quote: "Well discipline in center I love it",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjWnjQ6GO3CtcWdxuicQNDp0Zb4_qoTn7pnIGe7lKoPYYsOzSspl=w90-h90-p-rp-mo-br100",
+  },
+  {
+    id: 18,
+    name: "Mukesh Jandu",
+    role: " Typing Student",
+    quote: "Well discipline in center I love it",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjWnjQ6GO3CtcWdxuicQNDp0Zb4_qoTn7pnIGe7lKoPYYsOzSspl=w90-h90-p-rp-mo-br100",
+  },
+  {
+    id: 19,
+    name: "Official Ashish0",
+    role: " Tally Student",
+    quote: " I love it",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjUgutE4q_uv03-eHo2xa_8GTpqt-lueV7_r9IBHdLnmixi3lnfK=w190-h190-p-rp-mo-ba1-br100",
+  },
+  {
+    id: 20,
+    name: "Chopra ji",
+    role: " dca Student",
+    quote: " I love it",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjX5_8Gp8ptCceZYshJifzb3X5lAjPo-7s8Ae01WPO_nn6-RmP6y1g=w190-h190-p-rp-mo-br100",
+  },
+  {
+    id: 21,
+    name: "Pooja Dathak",
+    role: " tally Student",
+    quote: " she is very annoying",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjX5_8Gp8ptCceZYshJifzb3X5lAjPo-7s8Ae01WPO_nn6-RmP6y1g=w190-h190-p-rp-mo-br100",
+  },
+  {
+    id: 22,
+    name: "Snap music",
+    role: "  Student",
+    quote: "Computer Center and Library",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjXUr_hwEg5EJiInoe5hDgKezeXuE3hb18Y5q0iMdNNA2Ji1HbCK=w190-h190-p-rp-mo-ba1-br100",
+  },
+  {
+    id: 23,
+    name: "Sandeep Kumar",
+    role: "  Student",
+    quote: "Computer Center and Library",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjXUr_hwEg5EJiInoe5hDgKezeXuE3hb18Y5q0iMdNNA2Ji1HbCK=w190-h190-p-rp-mo-ba1-br100",
+  },
+  {
+    id: 24,
+    name: "SNEHLATA PRAJAPAT",
+    role: "  Student",
+    quote: "Computer Center and Library",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjWEizR8k_vVD-H810hXOTI-JGQ8yWgmM7mg-oiVtlfjSEq19lA=w90-h90-p-rp-mo-br100",
+  },
+  {
+    id: 25,
+    name: "lalit kumar",
+    role: "  Student",
+    quote: " ",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjXUr_hwEg5EJiInoe5hDgKezeXuE3hb18Y5q0iMdNNA2Ji1HbCK=w190-h190-p-rp-mo-ba1-br100",
+  },
+  {
+    id: 26,
+    name: "Ravi Kumar",
+    role: "  Student",
+    quote: "Computer Center and Library",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjXUr_hwEg5EJiInoe5hDgKezeXuE3hb18Y5q0iMdNNA2Ji1HbCK=w190-h190-p-rp-mo-ba1-br100",
+  },
+  {
+    id: 27,
+    name: "ravindra kumar",
+    role: " Typing Student",
+    quote: "Computer Center and Library",
+    rating: 5,
+    category: "student",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjVJjuoxJRk89YQCntgmcD-eMBPBENfhUNFjQ9UchcAhFdWyN73j=w190-h190-p-rp-mo-ba1-br100",
+  },
+];
