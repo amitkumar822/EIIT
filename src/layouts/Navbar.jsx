@@ -61,7 +61,7 @@ export const Navbar = () => {
         {/* Logo */}
         <Link
           to="/"
-          className="text-xl font-bold flex gap-2 justify-center items-center text-yellow-300"
+          className="text-xl font-bold flex gap-2 justify-center items-center"
         >
           <img
             className="w-9 h-9 -my-2 rounded-full"
@@ -69,9 +69,7 @@ export const Navbar = () => {
             alt="eiit"
           />
           <span className="tracking-wide">
-            E.<span className="text-red-400">I.</span>
-            <span className="text-green-400">I.</span>
-            <span className="text-blue-400">T</span>
+            EIIT
           </span>
         </Link>
 

@@ -37,6 +37,7 @@ import {
 } from "react-router-dom";
 import TestimonialsPage from "@/pages/website/about/TestimonialsPage";
 import StudentJoinedSection from "@/pages/website/study_ceneter/StudentJoinedSection";
+import ScholarshipInfo from "@/pages/website/ScholarshipInfo/ScholarshipInfo";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -64,6 +65,7 @@ const router = createBrowserRouter(
         <Route path="/computer-courses/rs-cfa" element={<RSCFACoursePage />} />
         <Route path="/computer-courses/rs-csep" element={<RSCSEPCoursePage />} />
         <Route path="/study-center/apply" element={<StudentJoinedSection />} />
+        <Route path="/scholarship-info" element={<ScholarshipInfo />} />
         
         {/* vocational courses */}
         <Route path="/vocational-courses/ntt" element={<NTTCoursePage />} />

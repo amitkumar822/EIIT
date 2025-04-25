@@ -60,7 +60,7 @@ const About = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       {/* **Hero Section - Redesigned** */}
       <section className="relative bg-gradient-to-bl from-indigo-900 via-blue-950 to-slate-900 text-white py-32 overflow-hidden">
-        {/* Decorative Background Patterns */}
+        {/* SVG, Decorative Background Patterns */}
         <div className="absolute inset-0 pointer-events-none opacity-10 z-0">
           <svg
             className="w-full h-full"

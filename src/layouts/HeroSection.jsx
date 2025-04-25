@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion, useAnimation } from "framer-motion";
 import { Carousel } from "@/layouts/Carousel";
+import { Link } from "react-router";
 
 const notifications = [
   "Office Order reg. Appointment of Prof. Ranjeet Kumar Choudhary...",
@@ -107,8 +108,14 @@ export default function HeroSection() {
   return (
     <div className="w-full mx-auto pb-10">
       {/* Header Top Notification */}
+
       <div className="bg-white text-red-600 text-sm font-semibold py-1 px-4 flex flex-wrap items-center justify-center border-b border-red-200">
-        <p className="animate-pulse">➤ information of RSCIT exam April 2025</p>
+        <Link to="/scholarship-info" className="flex gap-1">
+          ➤ information of RSCIT exam April 2025
+        <Badge variant="destructive" className="ml-1 animate-pulse">
+          new!
+        </Badge>
+        </Link>
       </div>
 
       {/* Banner and Content */}

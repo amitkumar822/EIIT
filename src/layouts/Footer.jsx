@@ -26,8 +26,8 @@ const Footer = () => {
         <div>
           {/* Logo */}
         <Link
-          to="/"
-          className="text-xl font-bold flex gap-2 mb-3 items-center text-yellow-300"
+          to="/about"
+          className="text-xl font-bold flex gap-2 mb-3 items-center"
         >
           <img
             className="w-9 h-9 -my-2 rounded-full"
@@ -35,12 +35,10 @@ const Footer = () => {
             alt="eiit"
           />
           <span className="tracking-wide">
-            E.<span className="text-red-400">I.</span>
-            <span className="text-green-400">I.</span>
-            <span className="text-blue-400">T</span>
+            EIIT
           </span>
         </Link>
-          <h3 className="font-semibold mb-3 text-yellow-300 underline">EduSphere Institute of Information Technology</h3>
+          <h3 className="font-semibold mb-3 underline">EduSphere Institute of Information Technology</h3>
           <p className="text-sm text-sky-100">
             Empowering future leaders through innovative education and inclusive learning.
           </p>
