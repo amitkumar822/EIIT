@@ -38,6 +38,7 @@ import {
 import TestimonialsPage from "@/pages/website/about/TestimonialsPage";
 import StudentJoinedSection from "@/pages/website/study_ceneter/StudentJoinedSection";
 import ScholarshipInfo from "@/pages/website/ScholarshipInfo/ScholarshipInfo";
+import { LegalDocumentsPage } from "@/pages/website/about/LegalDocumentsPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -66,6 +67,7 @@ const router = createBrowserRouter(
         <Route path="/computer-courses/rs-csep" element={<RSCSEPCoursePage />} />
         <Route path="/study-center/apply" element={<StudentJoinedSection />} />
         <Route path="/scholarship-info" element={<ScholarshipInfo />} />
+        <Route path="/legal-document" element={<LegalDocumentsPage />} />
         
         {/* vocational courses */}
         <Route path="/vocational-courses/ntt" element={<NTTCoursePage />} />

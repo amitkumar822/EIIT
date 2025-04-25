@@ -28,8 +28,6 @@ const ScrollBox = ({ title, items }) => {
   const [isHovered, setIsHovered] = useState(false);
   const controls = useAnimation();
 
-  const totalHeight = items.length * 40; // Approx height per item
-
   useEffect(() => {
     let isCancelled = false;
 
@@ -112,9 +110,9 @@ export default function HeroSection() {
       <div className="bg-white text-red-600 text-sm font-semibold py-1 px-4 flex flex-wrap items-center justify-center border-b border-red-200">
         <Link to="/scholarship-info" className="flex gap-1">
           ➤ information of RSCIT exam April 2025
-        <Badge variant="destructive" className="ml-1 animate-pulse">
-          new!
-        </Badge>
+          <Badge variant="destructive" className="ml-1 animate-pulse">
+            new!
+          </Badge>
         </Link>
       </div>
 
@@ -132,18 +130,11 @@ export default function HeroSection() {
             className="w-full"
           >
             <Carousel />
-
-            {/* <img
-              src="https://mgcub.ac.in/images/slider/09102023_5.jpg"
-              alt="Convocation Ceremony"
-              className="w-full h-full object-cover rounded-md"
-            /> */}
           </motion.div>
-          {/* <LatestVideoView /> */}
         </div>
 
         {/* Right News */}
-        <ScrollBox title="LATEST @ MGCU" items={updates} />
+        <ScrollBox title="LATEST @ EIIT" items={updates} />
       </div>
     </div>
   );

@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Quote,
-  GraduationCap,
-  Briefcase,
-  User,
   Star,
+  School,
+  ArrowRight,
   ChevronLeft,
   ChevronRight,
-  Award,
-  School,
-  Heart,
-  ArrowRight,
+  ScrollText,
+  IndianRupee,
+  GraduationCap,
+  Briefcase,
 } from "lucide-react";
 import {
   Card,
@@ -21,43 +20,114 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const TestimonialsPage = () => {
+  const [activeCategory, setActiveCategory] = useState("students");
+  const [isPaused, setIsPaused] = useState(false);
+  const scrollContainerRef = useRef(null);
+  const [showAll, setShowAll] = useState(false);
+
+  // Auto-scroll effect
+  useEffect(() => {
+    if (showAll || isPaused) return;
+
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) return;
+
+    const scrollWidth = scrollContainer.scrollWidth;
+    const clientWidth = scrollContainer.clientWidth;
+    let scrollLeft = scrollContainer.scrollLeft;
+
+    const interval = setInterval(() => {
+      if (scrollLeft >= scrollWidth - clientWidth) {
+        scrollLeft = 0;
+      } else {
+        scrollLeft += 1;
+      }
+      scrollContainer.scrollTo({ left: scrollLeft, behavior: "smooth" });
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, [showAll, isPaused]);
+
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+  };
+
+  const scrollLeft = () => {
+    scrollContainerRef.current.scrollBy({
+      left: -300,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollRight = () => {
+    scrollContainerRef.current.scrollBy({
+      left: 300,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50">
-      {/* Hero Section (Indian Theme) */}
-      <section className="relative bg-gradient-to-r from-indigo-700 to-purple-800 text-white py-20 overflow-hidden">
-        {/* Decorative Rangoli Pattern (SVG) */}
-        <div className="absolute inset-0 opacity-10">
-          <svg viewBox="0 0 1200 600" className="w-full h-full">
-            <path
-              d="M300,200 C400,100 500,300 600,200 C700,100 800,300 900,200"
-              stroke="currentColor"
-              strokeWidth="2"
-              fill="none"
-              strokeLinecap="round"
+      {/* Hero Section - Modern Design */}
+      <section className="relative bg-gradient-to-br from-indigo-900 via-purple-800 to-indigo-900 text-white py-24 overflow-hidden">
+        {/* Animated floating elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(15)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute rounded-full bg-white/10"
+              initial={{
+                x: Math.random() * 1000,
+                y: Math.random() * 800,
+                width: Math.random() * 30 + 10,
+                height: Math.random() * 30 + 10,
+                opacity: Math.random() * 0.5 + 0.1,
+              }}
+              animate={{
+                y: [0, Math.random() * 100 - 50, 0],
+                x: [0, Math.random() * 100 - 50, 0],
+                transition: {
+                  duration: Math.random() * 10 + 10,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                },
+              }}
             />
-            <circle cx="300" cy="200" r="10" fill="currentColor" />
-            <circle cx="600" cy="200" r="10" fill="currentColor" />
-            <circle cx="900" cy="200" r="10" fill="currentColor" />
-          </svg>
+          ))}
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-yellow-300">EIIT</span> Success Stories
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Hear from our students, alumni, and recruiters about their journey
-            with EduSphere.
-          </p>
-          <Button className="bg-yellow-400 hover:bg-yellow-300 text-indigo-900 px-8 py-4 rounded-lg font-bold text-lg transition transform hover:scale-105 shadow-lg flex items-center mx-auto">
-            Explore Courses <ArrowRight className="ml-2" />
-          </Button>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center bg-yellow-400/20 px-4 py-2 rounded-full mb-6 border border-yellow-400/30">
+              <IndianRupee className="text-yellow-300 mr-2" size={18} />
+              <span className="text-yellow-300 font-medium">
+                Trusted by 10,000+ students
+              </span>
+            </div>
+
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-100">
+                Transformative
+              </span>{" "}
+              Learning Experiences
+            </h1>
+
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-blue-100">
+              Join thousands who've accelerated their careers with our programs.
+              Hear their success stories.
+            </p>
+          </motion.div>
         </div>
 
-        {/* Wave Divider (Indian Motif) */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 overflow-hidden">
+        {/* Wave divider with gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden">
           <svg
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
@@ -65,100 +135,234 @@ const TestimonialsPage = () => {
           >
             <path
               d="M0,0 C150,40 350,0 600,40 C850,80 1050,0 1200,40 L1200,120 L0,120 Z"
-              fill="white"
+              fill="url(#wave-gradient)"
             />
+            <defs>
+              <linearGradient
+                id="wave-gradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
+                <stop offset="0%" stopColor="#6366f1" />
+                <stop offset="100%" stopColor="#8b5cf6" />
+              </linearGradient>
+            </defs>
           </svg>
         </div>
       </section>
 
-      {/* Current Student Testimonials */}
-      <section className="mb-16">
-        <div className="flex flex-col items-center mb-10">
-          <div className="bg-blue-100 p-4 rounded-full mb-4">
-            <School className="text-blue-600" size={28} />
+      {/* Testimonial Categories */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <Button
+              variant={activeCategory === "students" ? "default" : "outline"}
+              onClick={() => setActiveCategory("students")}
+              className="px-6 py-3 rounded-full flex items-center gap-2 cursor-pointer"
+            >
+              <GraduationCap size={18} />
+              Students
+            </Button>
+            <Button
+              variant={activeCategory === "alumni" ? "default" : "outline"}
+              onClick={() => setActiveCategory("alumni")}
+              className="px-6 py-3 rounded-full flex items-center gap-2 cursor-pointer"
+            >
+              <Briefcase size={18} />
+              Alumni
+            </Button>
+            <Button
+              variant={activeCategory === "recruiters" ? "default" : "outline"}
+              onClick={() => setActiveCategory("recruiters")}
+              className="px-6 py-3 rounded-full flex items-center gap-2 cursor-pointer"
+            >
+              <School size={18} />
+              Recruiters
+            </Button>
           </div>
-          <h2 className="text-3xl font-bold text-gray-800 text-center">
-            Student <span className="text-blue-600">Experiences</span>
-          </h2>
-          <p className="text-gray-600 text-center max-w-2xl mt-2">
-            See what current students say about campus life & learning.
-          </p>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
-          {testimonials.map((testimonial) => (
-            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-          ))}
+          {/* Testimonial Carousel */}
+          <div className="relative">
+            <h2 className="text-3xl font-bold text-center mb-8">
+              {activeCategory === "students" && "Current Student Experiences"}
+              {activeCategory === "alumni" && "Alumni Success Stories"}
+              {activeCategory === "recruiters" && "Recruiter Testimonials"}
+            </h2>
+
+            <div
+              className="relative"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
+              {!showAll && (
+                <>
+                  <button
+                    onClick={scrollLeft}
+                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-all hidden md:block"
+                  >
+                    <ChevronLeft className="text-indigo-600" size={24} />
+                  </button>
+                  <button
+                    onClick={scrollRight}
+                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-all hidden md:block"
+                  >
+                    <ChevronRight className="text-indigo-600" size={24} />
+                  </button>
+                </>
+              )}
+
+              <div
+                ref={scrollContainerRef}
+                className={`${
+                  showAll
+                    ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    : "flex overflow-x-auto pb-6 gap-6 scrollbar-hide"
+                }`}
+              >
+                {testimonials.map((testimonial) => (
+                  <div
+                    key={testimonial.id}
+                    className={`${showAll ? "" : "flex-shrink-0 w-80 lg:w-96"}`}
+                  >
+                    <TestimonialCard testimonial={testimonial} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="text-center mt-8">
+              <Button
+                onClick={toggleShowAll}
+                variant="outline"
+                className="rounded-full px-6 py-3 gap-2"
+              >
+                {showAll ? (
+                  <>
+                    <ChevronLeft size={18} />
+                    Back to Carousel
+                  </>
+                ) : (
+                  <>
+                    <ScrollText size={18} />
+                    View All Testimonials
+                  </>
+                )}
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-indigo-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-indigo-700 mb-2">
+                10K+
+              </div>
+              <div className="text-gray-600">Students Trained</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-indigo-700 mb-2">95%</div>
+              <div className="text-gray-600">Placement Rate</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-indigo-700 mb-2">4.9</div>
+              <div className="text-gray-600">Average Rating</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-indigo-700 mb-2">
+                200+
+              </div>
+              <div className="text-gray-600">Hiring Partners</div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
   );
 };
 
-// Reusable Testimonial Card Component (Indian Style)
+// Enhanced Testimonial Card Component
 const TestimonialCard = ({ testimonial }) => {
   return (
-    <Card className="relative overflow-hidden bg-white/90 backdrop-blur-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-200 rounded-2xl">
-      {/* Decorative SVG Background */}
-      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-        <svg
-          className="w-full h-full"
-          viewBox="0 0 800 800"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="400" cy="400" r="400" fill="#a5f3fc" />
-          <circle cx="300" cy="200" r="100" fill="#38bdf8" />
-          <circle cx="600" cy="600" r="150" fill="#0ea5e9" />
-        </svg>
-      </div>
+    <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.3 }}>
+      <Card className="relative overflow-hidden h-full min-h-[20.7rem] bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all">
+        {/* Gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-30" />
+        {/* Decorative SVG Background */}
+        <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
+          <svg
+            className="w-full h-full"
+            viewBox="0 0 800 800"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="400" cy="400" r="400" fill="#a5f3fc" />
+            <circle cx="300" cy="200" r="100" fill="#38bdf8" />
+            <circle cx="600" cy="600" r="150" fill="#0ea5e9" />
+          </svg>
+        </div>
 
-      <CardHeader className="pb-0 relative z-10">
-        <div className="flex items-center">
-          <img
-           referrerPolicy="no-referrer"
-            src={testimonial.avatar}
-            alt={testimonial.name}
-            className="w-14 h-14 rounded-full object-cover border-2 border-white shadow-md"
-          />
-          <div className="ml-4">
-            <CardTitle className="text-lg font-semibold text-gray-800">
-              {testimonial.name}
-            </CardTitle>
-            <CardDescription className="text-sm text-sky-600 font-medium">
-              {testimonial.role}
-            </CardDescription>
+        {/* Decorative corner */}
+        <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-100 transform rotate-45 origin-bottom-left" />
+        </div>
+
+        <CardHeader className="relative z-10">
+          <div className="flex items-center">
+            <div className="relative">
+              <img
+                referrerPolicy="no-referrer"
+                src={testimonial.avatar}
+                alt={testimonial.name}
+                className="w-14 h-14 rounded-full object-cover border-4 border-white shadow-md"
+              />
+              <div className="absolute -bottom-1 -right-1 bg-white p-1 rounded-full">
+                <div className="bg-indigo-600 rounded-full p-1">
+                  <Quote className="text-white" size={12} />
+                </div>
+              </div>
+            </div>
+            <div className="ml-4">
+              <CardTitle className="text-lg font-semibold text-gray-800">
+                {testimonial.name}
+              </CardTitle>
+              <CardDescription className="text-sm font-medium">
+                <span className="text-indigo-600">{testimonial.role}</span> •{" "}
+                {testimonial.company}
+              </CardDescription>
+            </div>
           </div>
-        </div>
-      </CardHeader>
+        </CardHeader>
 
-      <CardContent className="py-4 relative z-10">
-        <Quote className="text-sky-400 mb-2 float-left mr-2" size={20} />
-        <p className="text-gray-700 italic leading-relaxed clear-left">
-          "{testimonial.quote}"
-        </p>
-      </CardContent>
+        <CardContent className="relative z-10 pb-6">
+          <p className="text-gray-700 leading-relaxed">"{testimonial.quote}"</p>
+        </CardContent>
 
-      <CardFooter className="relative z-10">
-        <div className="flex items-center">
-          {[...Array(Math.round(testimonial.rating))].map((_, i) => (
-            <Star
-              key={i}
-              className="text-yellow-400 fill-yellow-400"
-              size={18}
-            />
-          ))}
-          <span className="text-gray-500 text-sm ml-2">
-            {testimonial.rating}/5
-          </span>
-        </div>
-      </CardFooter>
-    </Card>
+        <CardFooter className="relative z-10">
+          <div className="flex items-center">
+            {[...Array(Math.round(testimonial.rating))].map((_, i) => (
+              <Star
+                key={i}
+                className="text-yellow-400 fill-yellow-400"
+                size={18}
+              />
+            ))}
+            <span className="text-gray-500 text-sm ml-2">
+              {testimonial.rating}/5
+            </span>
+          </div>
+        </CardFooter>
+      </Card>
+    </motion.div>
   );
 };
 
 export default TestimonialsPage;
-
 const testimonials = [
   {
     id: 1,
