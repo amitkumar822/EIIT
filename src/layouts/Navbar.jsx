@@ -20,7 +20,7 @@ export const Navbar = () => {
   const [scrollingText, setScrollingText] = useState(true);
 
   return (
-    <div className="relative z-50 text-white shadow-lg md:sticky top-0">
+    <div className="relative z-50 text-white shadow-lg md:fixed w-full top-0">
       {/* Notification Bar */}
       <div className=" bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 border-y border-white">
         <div className="md:w-[85%] mx-auto flex justify-between items-center py-1 px-4 overflow-hidden">

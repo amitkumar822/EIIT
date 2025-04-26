@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className="w-full h-full  bg-gradient-to-br from-[#e0f7fa] to-[#e1f5fe] overflow-hidden">
       <Navbar />
-      <main>
+      <main className="md:pt-19">
         <Outlet />
       </main>
       <Footer />
