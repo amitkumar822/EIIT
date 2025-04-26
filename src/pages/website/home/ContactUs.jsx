@@ -55,15 +55,23 @@ export default function ContactUs() {
             <PhoneCall className="text-cyan-600 w-6 h-6 mt-1" />
             <div>
               <h4 className="text-lg font-semibold text-slate-800">Phone</h4>
-              <p className="text-slate-600">+91 9876543210</p>
+              <a href="tel: +91 72310 41011" className="text-slate-600">+91 72310 41011</a>
             </div>
           </div>
 
           <div className="flex items-start gap-4">
             <MapPin className="text-cyan-600 w-6 h-6 mt-1" />
             <div>
-              <h4 className="text-lg font-semibold text-slate-800">Location</h4>
-              <p className="text-slate-600">EduSphere Campus, Patna, Bihar, India</p>
+              <h4 className="text-lg font-semibold text-slate-800">Head Office</h4>
+              <p className="text-slate-600">Old Market main Road, Near Ration Deepo, Sidhmukh (RAJ) 331701</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <MapPin className="text-cyan-600 w-6 h-6 mt-1" />
+            <div>
+              <h4 className="text-lg font-semibold text-slate-800">Branch</h4>
+              <p className="text-slate-600">Jama Masjid road near jahaj wali haveli, Nohar (RAJ) 335523</p>
             </div>
           </div>
         </motion.div>

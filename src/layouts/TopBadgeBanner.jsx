@@ -11,7 +11,12 @@ const badges = [
   {
     title: "FIT INDIA MOVEMENT",
     link: "/fit-india",
-    svg: <img src="https://mgcub.ac.in/images/fitindia.png" alt="" />,
+    svg: (
+      <img
+        src="https://mgcub.ac.in/images/fitindia.png"
+        alt=""
+      />
+    ),
   },
   {
     title: "राष्ट्रीय शिक्षा नीति 2020",
@@ -63,12 +68,12 @@ export default function TopBadgeBanner() {
                   badge.svg
                 ) : (
                   <div>
-                    <h3 className="text-lg font-bold text-indigo-900 leading-tight">
+                    <h3 className="md:text-lg text-sm font-bold text-indigo-900 leading-tight">
                       {badge.title}
                     </h3>
                     {badge.subtitle && (
                       <p
-                        className={`text-md mt-1 font-medium text-indigo-900 leading-snug`}
+                        className={`md:text-md text-xs mt-1 font-medium text-indigo-900 leading-snug`}
                       >
                         {badge.subtitle}
                       </p>
