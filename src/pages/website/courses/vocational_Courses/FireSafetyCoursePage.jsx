@@ -2,7 +2,6 @@ import React from "react";
 import {
   Flame,
   ShieldAlert,
-  GraduationCap,
   Briefcase,
   Clock,
   Award,
@@ -17,12 +16,7 @@ import {
   Building,
   Axis3D,
 } from "lucide-react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-} from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import {
   Accordion,
   AccordionItem,
@@ -35,33 +29,130 @@ const FireSafetyCoursePage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-red-600 to-orange-600 text-white py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="flex justify-center mb-6">
-            <div className="bg-white/20 p-4 rounded-full backdrop-blur-sm">
-              <Flame className="w-10 h-10" />
+
+      {/* Hero Section with Gradient & SVG */}
+      <div className="relative bg-gradient-to-br from-red-700 via-orange-600 to-amber-500 text-white py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Decorative SVG Elements */}
+        <div className="absolute inset-0 opacity-20">
+          <svg
+            className="w-full h-full"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <pattern
+              id="grid-pattern"
+              x="0"
+              y="0"
+              width="20"
+              height="20"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 20 0 L 0 0 0 20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.5"
+              />
+            </pattern>
+            <rect width="100" height="100" fill="url(#grid-pattern)" />
+          </svg>
+        </div>
+
+        {/* Animated Flames SVG */}
+        <div className="absolute top-0 right-0 w-64 h-64 opacity-30">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            {[10, 50, 90, 130, 170].map((x, i) => (
+              <path
+                key={i}
+                d="M50,150 C75,50 125,50 150,150 L100,200 Z"
+                fill="white"
+                transform={`translate(${x - 25}, -30) scale(0.6)`}
+                className="animate-float"
+                style={{ animationDelay: `${i * 0.5}s` }}
+              />
+            ))}
+          </svg>
+        </div>
+
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <div className="flex justify-center mb-8">
+            <div className="bg-white/20 p-5 rounded-full backdrop-blur-sm shadow-lg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-12 h-12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 2a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zM19 13a1 1 0 0 0-1-1h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1zM6 12a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1zM15 8a1 1 0 0 0-1-1h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1zM18 15a1 1 0 0 0-1-1h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1zM9 8a1 1 0 0 0-1-1H7a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1zM12 18a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1z" />
+                <path d="M12 8a4 4 0 0 0-4 4v4a4 4 0 0 0 8 0v-4a4 4 0 0 0-4-4z" />
+              </svg>
             </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Fire & Safety Officer Training
+
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-amber-200">
+              Fire & Safety Officer Certification
+            </span>
           </h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Become a certified Fire & Safety professional and protect lives and
-            property with our industry-recognized program.
+
+          <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed">
+            Master fire prevention, emergency response, and safety protocols
+            with our <span className="font-semibold">NSQF-certified</span>{" "}
+            training program.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button className="bg-white text-red-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold">
+
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <Button className="bg-white text-red-600 hover:bg-gray-100 px-10 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
               Enroll Now
             </Button>
             <Button
               variant="outline"
-              className="text-white border-white hover:bg-white/10 px-8 py-6 text-lg font-semibold"
+              className="bg-transparent border-2 border-gray-200 text-black/80 hover:bg-white/20 px-10 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
             >
-              Course Details
+              <div className="flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+                Course Details
+              </div>
             </Button>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-white/10 backdrop-blur-sm"></div>
+
+        {/* Bottom Wave SVG */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+              opacity=".25"
+              fill="white"
+            ></path>
+            <path
+              d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+              opacity=".5"
+              fill="white"
+            ></path>
+            <path
+              d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+              fill="white"
+            ></path>
+          </svg>
+        </div>
       </div>
 
       {/* What is Fire & Safety Section */}
@@ -651,30 +742,6 @@ const FireSafetyCoursePage = () => {
             <Button className="bg-orange-600 hover:bg-orange-700 px-8 py-6 text-lg">
               <MessageSquare className="mr-2 w-5 h-5" />
               Contact Our Safety Advisor
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-red-700 to-orange-700 text-white px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Launch Your Fire & Safety Career?
-          </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Join our next batch and gain the skills to protect lives and
-            property while building a rewarding profession.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button className="bg-white text-red-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold">
-              Enroll Now
-            </Button>
-            <Button
-              variant="outline"
-              className="text-white border-white hover:bg-white/10 px-8 py-6 text-lg font-semibold"
-            >
-              Download Syllabus
             </Button>
           </div>
         </div>

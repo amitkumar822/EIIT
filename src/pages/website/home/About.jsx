@@ -236,50 +236,7 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Yoga Teacher Training",
-                duration: "1 Year & 2 Year",
-                desc: "Recognized by Ministry of AYUSH, Govt. of India",
-                icon: <Users className="w-8 h-8" />,
-                color: "from-amber-500 to-amber-600",
-              },
-              {
-                title: "Nursery Teacher Training (NTT)",
-                duration: "1 Year Program",
-                desc: "CBSE affiliated curriculum",
-                icon: <BookOpen className="w-8 h-8" />,
-                color: "from-green-500 to-green-600",
-              },
-              {
-                title: "Fire & Safety",
-                duration: "Certification",
-                desc: "100% placement assistance",
-                icon: <ShieldCheck className="w-8 h-8" />,
-                color: "from-red-500 to-red-600",
-              },
-              {
-                title: "Computer Courses (DCA/ADCA/PGDCA)",
-                duration: "3-12 Months",
-                desc: "Tally ERP9, CCC, and advanced certifications",
-                icon: <Cpu className="w-8 h-8" />,
-                color: "from-blue-500 to-blue-600",
-              },
-              {
-                title: "Early Child Care Education (ECCE)",
-                duration: "Diploma Program",
-                desc: "UGC Approved University certification",
-                icon: <GraduationCap className="w-8 h-8" />,
-                color: "from-purple-500 to-purple-600",
-              },
-              {
-                title: "Distance Education",
-                duration: "Flexible Learning",
-                desc: "10th/12th through NIOS Board",
-                icon: <Globe className="w-8 h-8" />,
-                color: "from-indigo-500 to-indigo-600",
-              },
-            ].map((program, index) => (
+            {programs.map((program, index) => (
               <div key={index} className="group relative">
                 <div
                   className={`absolute -inset-0.5 bg-gradient-to-r ${program.color} rounded-xl opacity-75 group-hover:opacity-100 blur transition duration-500 group-hover:duration-200 animate-tilt`}
@@ -378,67 +335,7 @@ const About = () => {
           </div>
 
           {/* Leadership Cards */}
-          <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-            {/* Founder */}
-            <div className="relative bg-white/60 backdrop-blur-lg border border-white/40 p-6 rounded-3xl shadow-xl hover:shadow-2xl transition">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center mr-4 shadow-md">
-                  <Users className="text-blue-700 w-8 h-8" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-blue-900">
-                    Har Datt Singh
-                  </h3>
-                  <p className="text-blue-600 font-medium">
-                    Founder & CEO
-                  </p>
-                </div>
-              </div>
-              <p className="text-blue-900 mb-4">
-                Retd. Havaldar (BSF) with a mission to uplift rural India
-                through technical education.
-              </p>
-              <div className="text-sm text-blue-800">
-                <a href="tel: +91 72310 41011" className="flex items-center mb-1">
-                  <Phone className="w-4 h-4 mr-2" />
-                  +91 72310 41011
-                </a>
-                <div className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
-                  eduspheresidhmukh@gmail.com
-                </div>
-              </div>
-            </div>
-
-            {/* Director */}
-            <div className="relative bg-white/60 backdrop-blur-lg border border-white/40 p-6 rounded-3xl shadow-xl hover:shadow-2xl transition">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-purple-200 rounded-full flex items-center justify-center mr-4 shadow-md">
-                  <Users className="text-purple-700 w-8 h-8" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-purple-900">
-                    Mr. Vikas
-                  </h3>
-                  <p className="text-purple-600 font-medium">Director</p>
-                </div>
-              </div>
-              <p className="text-purple-900 mb-4">
-                Leading academic and operational growth with 10+ years of
-                experience.
-              </p>
-              <div className="text-sm text-purple-800">
-                <div className="flex items-center mb-1">
-                  <Phone className="w-4 h-4 mr-2" />
-                  +91 73729 85592
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Old Market, Near Ration Depot, Sidhmukh
-                </div>
-              </div>
-            </div>
-          </div>
+          <>{eiitMember && <LeadershipCards eiitMember={eiitMember} />}</>
         </div>
       </section>
 
@@ -547,69 +444,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* **FAQ Section** */}
-      {/* <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Answers to common questions about EIIT
-            </p>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="w-full space-y-4">
-              {[
-                {
-                  question: "Is EIIT government recognized?",
-                  answer:
-                    "Yes, we are an ISO 9001:2015 certified institute and our courses are recognized by UGC, Ministry of AYUSH (for Yoga courses), and affiliated with CBSE for NTT.",
-                },
-                {
-                  question: "What's the duration of courses?",
-                  answer:
-                    "Course durations vary: Yoga (1-2 years), NTT (1 year), Computer courses (3-12 months), Fire & Safety (6 months), and ECCE (1 year).",
-                },
-                {
-                  question: "Do you provide placement assistance?",
-                  answer:
-                    "Yes, we have 100% placement assistance for technical courses like Fire & Safety and Computer courses. For other courses, we provide career guidance.",
-                },
-                {
-                  question: "Where is your campus located?",
-                  answer:
-                    "Our head office is at Old Market, Near Ration Depot, Sidhmukh (Rajgarh). We also have affiliated centers in multiple locations.",
-                },
-              ].map((faq, index) => (
-                <Card
-                  key={index}
-                  className="border-0 shadow-sm hover:shadow-md transition"
-                >
-                  <AccordionItem value={`faq-${index}`}>
-                    <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                      <div className="flex items-center">
-                        <MessageSquare
-                          className="mr-4 text-blue-600"
-                          size={18}
-                        />
-                        <span className="font-semibold text-left">
-                          {faq.question}
-                        </span>
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-4 pl-16">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                </Card>
-              ))}
-            </Accordion>
-          </div>
-        </div>
-      </section> */}
-
       {/* **Enhanced FAQ Section** */}
       <section className="py-24 bg-gradient-to-br from-[#F0F9FF] via-[#E0F2FE] to-[#DBEAFE]">
         <div className="container mx-auto px-6">
@@ -693,3 +527,171 @@ const About = () => {
 };
 
 export default About;
+
+
+const LeadershipCards = ({ eiitMember }) => {
+  return (
+    <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto py-10">
+      {eiitMember.map((member) => (
+        <div
+          key={member.id}
+          className="relative bg-gradient-to-br from-blue-100 via-white to-purple-100 border border-white/60 shadow-xl p-6 rounded-3xl overflow-hidden transition-transform hover:scale-[1.02]"
+        >
+          {/* Decorative SVG Background */}
+          <svg
+            className="absolute top-0 right-0 w-32 h-32 opacity-10 -z-10"
+            viewBox="0 0 100 100"
+            fill="none"
+          >
+            <circle cx="50" cy="50" r="50" fill="url(#grad1)" />
+            <defs>
+              <linearGradient id="grad1" x1="0" y1="0" x2="100" y2="100">
+                <stop offset="0%" stopColor="#6366F1" />
+                <stop offset="100%" stopColor="#8B5CF6" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <div className="flex items-center mb-6">
+            <img
+              src={member.avatar}
+              alt={member.name}
+              className="w-20 h-20 rounded-full border-4 border-white shadow-md mr-4"
+            />
+            <div>
+              <h3 className="text-xl font-bold text-blue-900">{member.name}</h3>
+              <p className="text-blue-600 font-medium">{member.position}</p>
+            </div>
+          </div>
+
+          <p className="text-blue-900 mb-4 text-sm leading-relaxed">
+            {member.aboutUs}
+          </p>
+
+          <div className="text-sm text-blue-800 space-y-1">
+            {member.phone && (
+              <a
+                href={`tel:${member.phone}`}
+                className="flex items-center hover:text-blue-500 transition"
+              >
+                <Phone className="w-4 h-4 mr-2" />
+                {member.phone}
+              </a>
+            )}
+            {member.email && (
+              <a
+                href={`mailto:${member.email}`}
+                className="flex items-center hover:text-blue-500 transition"
+              >
+                <Mail className="w-4 h-4 mr-2" />
+                {member.email}
+              </a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const eiitMember = [
+  {
+    id: 1,
+    name: "Sanjay Datt Singh",
+    position: "FOUNDER & CEO",
+    avatar: "/about/founder_ceo.jpg",
+    aboutUs:
+      "Visionary leader and founder of EIIT, driving innovation and excellence in education and technology.",
+    phone: "",
+  },
+  {
+    id: 2,
+    name: "Rani Mam",
+    position: "Managing Director",
+    avatar: "/about/rani_Managing_Director.jpg",
+    aboutUs:
+      "Oversees all operations and ensures smooth management of the institute’s daily activities and long-term goals.",
+    phone: "",
+  },
+  {
+    id: 3,
+    name: "Sanehlata Mam",
+    position: "Center Head, Sidhmukh",
+    avatar: "/about/center_head_Sidhmukh.jpg",
+    aboutUs:
+      "Leads and manages the Sidhmukh center, ensuring quality training and student success.",
+    phone: "",
+  },
+  {
+    id: 4,
+    name: "Vikas Kumar",
+    position: "Center Head, Nohar",
+    avatar: "/about/center_head_nohar.jpg",
+    aboutUs:
+      "Heads the Nohar center, focusing on student development and academic excellence.",
+    phone: "",
+  },
+  {
+    id: 5,
+    name: "Rupender Singh",
+    position: "IT Head",
+    avatar: "/about/it_head.jpg",
+    aboutUs:
+      "Leads the IT department, managing technology infrastructure and digital growth.",
+    phone: "",
+  },
+  {
+    id: 6,
+    name: "Ravi Kumar",
+    position: "Marketing Head",
+    avatar: "/about/marketing_head.jpg",
+    aboutUs:
+      "Heads marketing efforts, building the institute's brand and outreach strategies.",
+    phone: "",
+  },
+];
+
+const programs = [
+  {
+    title: "Yoga Teacher Training",
+    duration: "1 Year & 2 Year",
+    desc: "Recognized by Ministry of AYUSH, Govt. of India",
+    icon: <Users className="w-8 h-8" />,
+    color: "from-amber-500 to-amber-600",
+  },
+  {
+    title: "Nursery Teacher Training (NTT)",
+    duration: "1 Year Program",
+    desc: "CBSE affiliated curriculum",
+    icon: <BookOpen className="w-8 h-8" />,
+    color: "from-green-500 to-green-600",
+  },
+  {
+    title: "Fire & Safety",
+    duration: "Certification",
+    desc: "100% placement assistance",
+    icon: <ShieldCheck className="w-8 h-8" />,
+    color: "from-red-500 to-red-600",
+  },
+  {
+    title: "Computer Courses (DCA/ADCA/PGDCA)",
+    duration: "3-12 Months",
+    desc: "Tally ERP9, CCC, and advanced certifications",
+    icon: <Cpu className="w-8 h-8" />,
+    color: "from-blue-500 to-blue-600",
+  },
+  {
+    title: "Early Child Care Education (ECCE)",
+    duration: "Diploma Program",
+    desc: "UGC Approved University certification",
+    icon: <GraduationCap className="w-8 h-8" />,
+    color: "from-purple-500 to-purple-600",
+  },
+  {
+    title: "Distance Education",
+    duration: "Flexible Learning",
+    desc: "10th/12th through NIOS Board",
+    icon: <Globe className="w-8 h-8" />,
+    color: "from-indigo-500 to-indigo-600",
+  },
+]

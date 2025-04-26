@@ -25,22 +25,23 @@ const Footer = () => {
         {/* University Info */}
         <div>
           {/* Logo */}
-        <Link
-          to="/about"
-          className="text-xl font-bold flex gap-2 mb-3 items-center"
-        >
-          <img
-            className="w-9 h-9 -my-2 rounded-full"
-            src="./eiit-logo.svg"
-            alt="eiit"
-          />
-          <span className="tracking-wide">
-            EIIT
-          </span>
-        </Link>
-          <h3 className="font-semibold mb-3 underline">EduSphere Institute of Information Technology</h3>
+          <Link
+            to="/about"
+            className="text-xl font-bold flex gap-2 mb-3 items-center"
+          >
+            <img
+              className="w-9 h-9 -my-2 rounded-full"
+              src="./eiit-logo.svg"
+              alt="eiit"
+            />
+            <span className="tracking-wide">EIIT</span>
+          </Link>
+          <h3 className="font-semibold mb-3 underline">
+            EduSphere Institute of Information Technology
+          </h3>
           <p className="text-sm text-sky-100">
-            Empowering future leaders through innovative education and inclusive learning.
+            Empowering future leaders through innovative education and inclusive
+            learning.
           </p>
         </div>
 
@@ -48,10 +49,18 @@ const Footer = () => {
         <div>
           <h4 className="text-xl font-semibold mb-3">Quick Links</h4>
           <ul className="space-y-2 text-sky-100 text-sm">
-            <li><a href="#" className="hover:underline">About Us</a></li>
-            <li><a href="#" className="hover:underline">Departments</a></li>
-            <li><a href="#" className="hover:underline">Admissions</a></li>
-            <li><a href="#" className="hover:underline">Contact</a></li>
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
+            <li>
+              <Link to="/">Departments</Link>
+            </li>
+            <li>
+              <Link to="/">Admissions</Link>
+            </li>
+            <li>
+              <Link to="/contact-us">Contact</Link>
+            </li>
           </ul>
         </div>
 
@@ -59,9 +68,14 @@ const Footer = () => {
         <div>
           <h4 className="text-xl font-semibold mb-3">Contact</h4>
           <ul className="text-sky-100 text-sm space-y-2">
-            <li className="flex items-center gap-2"><MapPin size={16} /> Patna, Bihar, India</li>
-            <li className="flex items-center gap-2"><Phone size={16} /> +91 72310 41011</li>
-            <li className="flex items-center gap-2"><Mail size={16} /> info@myuniversity.edu.in</li>
+            <li className="flex items-center gap-2">
+              <MapPin size={16} /> Old Market, Near Ration Deepo, Sidhmukh
+              (Rajgarh)
+            </li>
+            <li className="flex items-center gap-2 underline cursor-pointer">
+              <Phone size={16} /> <a href="tel:  +91 72310 41011"> +91 72310 41011</a>
+            </li>
+            {/* <li className="flex items-center gap-2"><Mail size={16} /> info@myuniversity.edu.in</li> */}
           </ul>
         </div>
 
@@ -73,7 +87,9 @@ const Footer = () => {
           </p>
           <div className="flex items-center space-x-2">
             <Input placeholder="Your email" className="bg-white text-black" />
-            <Button className="bg-yellow-400 hover:bg-yellow-500 text-black">Subscribe</Button>
+            <Button className="bg-yellow-400 hover:bg-yellow-500 text-black">
+              Subscribe
+            </Button>
           </div>
         </div>
       </div>
@@ -82,10 +98,18 @@ const Footer = () => {
       <div className="mt-8 border-t border-sky-600 pt-4 flex flex-col md:flex-row items-center justify-between text-sm text-sky-200">
         <p>© {new Date().getFullYear()} WebAnd. All rights reserved.</p>
         <div className="flex space-x-4 mt-4 md:mt-0">
-          <a href="#"><Facebook size={18} className="hover:text-yellow-400" /></a>
-          <a href="#"><Twitter size={18} className="hover:text-yellow-400" /></a>
-          <a href="#"><Linkedin size={18} className="hover:text-yellow-400" /></a>
-          <a href="#"><Instagram size={18} className="hover:text-yellow-400" /></a>
+          <a href="#">
+            <Facebook size={18} className="hover:text-yellow-400" />
+          </a>
+          <a href="#">
+            <Twitter size={18} className="hover:text-yellow-400" />
+          </a>
+          <a href="#">
+            <Linkedin size={18} className="hover:text-yellow-400" />
+          </a>
+          <a href="#">
+            <Instagram size={18} className="hover:text-yellow-400" />
+          </a>
         </div>
       </div>
     </motion.footer>
