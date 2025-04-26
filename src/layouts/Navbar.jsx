@@ -56,11 +56,11 @@ export const Navbar = () => {
           </motion.div>
         </div>
       </div> */}
-      <div className="flex items-center bg-gradient-to-r from-orange-500 to-pink-600 border-y border-white">
+      <div className="flex items-center  bg-gradient-to-r from-yellow-600 via-red-500 to-pink-500  border-y border-white">
         <span className="md:pl-4 md:font-semibold md:text-sm text-[9px] text-white font-bold md:tracking-wide text-nowrap">
           Mon-Sat(10AM-6PM)
         </span>
-        <div className="md:w-[85%] bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 mx-auto flex justify-between items-center py-1 px-4 overflow-hidden">
+        <div className="md:w-[85%] mx-auto flex justify-between items-center py-1 px-4 overflow-hidden">
           <motion.div
             initial={{ x: "100%" }}
             animate={{ x: "-100%" }}

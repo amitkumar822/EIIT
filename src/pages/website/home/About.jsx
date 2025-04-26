@@ -20,6 +20,9 @@ import {
   Phone,
   Globe,
   CheckCircle,
+  UserRound,
+  Laptop2,
+  BookOpenCheck,
 } from "lucide-react";
 import {
   Card,
@@ -93,7 +96,7 @@ const About = () => {
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full mb-6 border border-white/20">
               <Award className="mr-2 h-5 w-5" />
               <span className="text-sm font-medium">
-                ISO 9001:2015 Certified Institute
+                ISO 9001:2019 Certified Institute
               </span>
             </div>
 
@@ -107,7 +110,7 @@ const About = () => {
 
             <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-lg">
               EduSphere Institute, a unit of MEET CHARITABLE TRUST, is dedicated
-              to nurturing excellence in skill-based education since 2015.
+              to nurturing excellence in skill-based education since 2019.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -165,6 +168,61 @@ const About = () => {
         </div>
       </section>
 
+      {/* CEO Founder Speech Section */}
+      <section className="py-24 bg-gradient-to-br from-white via-blue-50 to-indigo-100 relative overflow-hidden">
+        {/* Blurred Decorative Background Shapes */}
+        <div className="absolute -top-32 -left-32 w-96 h-96 bg-purple-300 opacity-30 blur-3xl rounded-full mix-blend-multiply animate-blob"></div>
+        <div className="absolute -bottom-20 right-0 w-96 h-96 bg-blue-400 opacity-30 blur-3xl rounded-full mix-blend-multiply animate-blob animation-delay-2000"></div>
+
+        <div className="relative z-10 max-w-8xl mx-auto md:px-10 px-1">
+          <div className="w-full grid md:grid-cols-2 gap-12 items-center">
+            {/* Image with Badge */}
+            <div className="order-2 md:order-1 relative group">
+              <div className="overflow-hidden rounded-3xl shadow-2xl border border-white/30 transition-transform duration-500 transform group-hover:scale-105">
+                <img
+                  src="/about/founder_ceo_speech.jpg"
+                  alt="EduSphere Founder Speech"
+                  className="w-full h-[24rem] rounded-3xl object-cover"
+                />
+              </div>
+              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-xl shadow-md flex items-center gap-3 border border-gray-100">
+                <UserRound className="text-blue-700 w-6 h-6" />
+                <span className="text-blue-900 font-bold text-sm">
+                  FOUNDER & CEO
+                </span>
+              </div>
+            </div>
+
+            {/* Text Content First on Mobile */}
+            <div className="order-1 md:order-2 backdrop-blur-md bg-white/60 p-7 rounded-3xl border border-blue-100 shadow-xl">
+              <h2 className="text-4xl font-extrabold text-blue-900 mb-4">
+                About <span className="text-indigo-600">EduSphere</span>{" "}
+                Institute
+              </h2>
+              <p className="text-lg text-blue-800 mb-4">
+                Getting a strong career start is the ambition of every young job
+                seeker. However, a school-college education alone may not
+                suffice. Live Projects training and hands-on experience play a
+                crucial role in securing a good job. In today's dynamic IT
+                industry, where numerous technologies prevail, EIIT Institute
+                stands out as a premier training institute, guiding students to
+                choose the right courses for their career paths.
+              </p>
+              <p className="text-lg text-blue-800">
+                For over a decade, EIIT Institute has been dedicated to
+                educating students by imparting practical knowledge and
+                experience across various computer-related courses like RS-CIT,
+                TALLY, DFA, PGDCA, RS-CFA, ADCA, and many more. Our efforts have
+                empowered thousands of students to launch successful careers.
+                EIIT Institute's commitment to student success has garnered us
+                multiple awards, recognizing us as the Best Computer Training
+                Institute in the Tri-city area and worldwide.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Redesigned About Institute Section */}
       <section className="py-24 bg-gradient-to-br from-white via-blue-50 to-indigo-100 relative overflow-hidden">
         {/* Blurred Decorative Background Shapes */}
@@ -182,13 +240,13 @@ const About = () => {
               <p className="text-lg text-blue-800 mb-6">
                 EduSphere Institute of Information Technology (EIIT), a unit of
                 MEET Charitable Trust, has been a cornerstone of technical and
-                vocational excellence since 2015, empowering youth through
+                vocational excellence since 2019, empowering youth through
                 certified and career-focused training.
               </p>
               <ul className="space-y-4 text-blue-900">
                 <li className="flex items-start">
                   <Check className="text-green-600 mt-1 mr-3" />
-                  <span>ISO 9001:2015 Certified Institute</span>
+                  <span>ISO 9001:2019 Certified Institute</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="text-green-600 mt-1 mr-3" />
@@ -215,7 +273,7 @@ const About = () => {
               <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-xl shadow-md flex items-center gap-3 border border-gray-100">
                 <GraduationCap className="text-blue-700 w-6 h-6" />
                 <span className="text-blue-900 font-bold text-sm">
-                  Empowering Since 2015
+                  Empowering Since 2019
                 </span>
               </div>
             </div>
@@ -481,7 +539,7 @@ const About = () => {
                 {
                   question: "Is EIIT government recognized?",
                   answer:
-                    "Yes, we are an ISO 9001:2015 certified institute and our courses are recognized by UGC, Ministry of AYUSH (for Yoga courses), and affiliated with CBSE for NTT.",
+                    "Yes, we are an ISO 9001:2019 certified institute and our courses are recognized by UGC, Ministry of AYUSH (for Yoga courses), and affiliated with CBSE for NTT.",
                 },
                 {
                   question: "What's the duration of courses?",
@@ -527,7 +585,6 @@ const About = () => {
 };
 
 export default About;
-
 
 const LeadershipCards = ({ eiitMember }) => {
   return (
@@ -694,4 +751,4 @@ const programs = [
     icon: <Globe className="w-8 h-8" />,
     color: "from-indigo-500 to-indigo-600",
   },
-]
+];
