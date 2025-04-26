@@ -68,9 +68,7 @@ export const Navbar = () => {
             src="./eiit-logo.svg"
             alt="eiit"
           />
-          <span className="tracking-wide">
-            EIIT
-          </span>
+          <span className="tracking-wide">EIIT</span>
         </Link>
 
         <div className="md:hidden">
@@ -188,11 +186,20 @@ export const Navbar = () => {
           >
             {navItems.map((item, i) => (
               <div key={i} className="mt-2">
-                <button
-                  onClick={() => setOpenSubmenu(openSubmenu === i ? null : i)}
+                <Link
+                  to={item?.navLink}
+                  onClick={() => {
+                    setOpenSubmenu(openSubmenu === i ? null : i);
+
+                    {
+                      (item?.navLink === "/" ||
+                        item?.navLink === "/contact-us") &&
+                        setMobileMenuOpen(!mobileMenuOpen);
+                    }
+                  }}
                   className="w-full text-left py-2 font-semibold flex justify-between items-center border-b border-white"
                 >
-                  {item.label}
+                  {item?.label}
                   {item.submenu && (
                     <motion.div
                       animate={{ rotate: openSubmenu === i ? 180 : 0 }}
@@ -200,7 +207,7 @@ export const Navbar = () => {
                       <ChevronDown className="w-4 h-4" />
                     </motion.div>
                   )}
-                </button>
+                </Link>
                 <AnimatePresence>
                   {openSubmenu === i && item.submenu && (
                     <motion.ul
@@ -209,25 +216,31 @@ export const Navbar = () => {
                       exit={{ opacity: 0 }}
                       className="ml-4 mt-1 text-sm"
                     >
-                      {item.submenu.map((sub, j) =>
-                        typeof sub === "string" ? (
-                          <li
+                      {item.submenu?.map((sub, j) =>
+                        typeof sub?.title === "string" ? (
+                          <Link
                             key={j}
-                            className="py-1 border-b border-dotted border-white"
+                            to={sub?.navLink}
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            className="px-4 py-2 flex flex-col hover:bg-blue-700 border-b last:border-b-0 border-dotted border-gray-400"
                           >
-                            {sub}
-                          </li>
+                            {sub?.title}
+                          </Link>
                         ) : (
                           <div key={j}>
                             <div className="font-medium mt-2">{sub.label}</div>
                             <ul className="ml-4">
                               {sub.submenu.map((deep, k) => (
-                                <li
+                                <Link
                                   key={k}
-                                  className="py-1 border-b border-dotted border-white"
+                                  to={deep?.navLink}
+                                  onClick={() =>
+                                    setMobileMenuOpen(!mobileMenuOpen)
+                                  }
+                                  className="px-4 py-2 flex flex-col hover:bg-blue-700 border-b last:border-b-0 border-dotted border-gray-400"
                                 >
-                                  {deep}
-                                </li>
+                                  {deep?.title}
+                                </Link>
                               ))}
                             </ul>
                           </div>
