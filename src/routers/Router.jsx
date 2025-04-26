@@ -39,6 +39,7 @@ import TestimonialsPage from "@/pages/website/about/TestimonialsPage";
 import StudentJoinedSection from "@/pages/website/study_ceneter/StudentJoinedSection";
 import ScholarshipInfo from "@/pages/website/ScholarshipInfo/ScholarshipInfo";
 import { LegalDocumentsPage } from "@/pages/website/about/LegalDocumentsPage";
+import { StudentLoginVerify } from "@/pages/website/login/StudentloginVerify";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -46,6 +47,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<App />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/student-login" element={<StudentLoginVerify />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/facilites" element={<FacilitiesPage />} />
         <Route path="/library" element={<LibraryPage />} />

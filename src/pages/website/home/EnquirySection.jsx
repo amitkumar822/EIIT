@@ -18,10 +18,14 @@ import {
   BookOpen,
   MessageSquare,
 } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { useState } from "react";
 
 export default function EnquirySection() {
+  const [isPaused, setIsPaused] = useState(false);
   return (
-    <section className="py-12 px-4 md:px-16 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100">
+    <div className="py-12 px-4 md:px-16 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100">
+      {/* EIIT Enquiry Form */}
       <div className="grid md:grid-cols-2 gap-10 items-start">
         {/* Left Info Box */}
         <motion.div
@@ -171,6 +175,71 @@ export default function EnquirySection() {
           </div>
         </motion.form>
       </div>
-    </section>
+
+      {/* Certified Associations Section */}
+      <section className=" py-12 overflow-hidden">
+        <div className="container mx-auto px-4">
+          {/* Heading */}
+          <h2 className="text-xl sm:text-3xl font-extrabold text-center text-blue-900 mb-6">
+            EIIT - THE HUB OF IT<sup>®</sup> ESTEEMED ASSOCIATIONS
+          </h2>
+
+          {/* Decorative Divider */}
+          <div className="flex justify-center items-center mb-10">
+            <div className="w-16 h-1 bg-blue-600"></div>
+            <div className="w-4 h-4 bg-blue-600 rotate-45 mx-2"></div>
+            <div className="w-4 h-4 bg-red-600 rotate-45 mx-2"></div>
+            <div className="w-4 h-4 bg-blue-600 rotate-45 mx-2"></div>
+            <div className="w-16 h-1 bg-blue-600"></div>
+          </div>
+
+          {/* Scrolling Logos */}
+          <div
+            className="relative w-full overflow-hidden"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            <motion.div
+              className="flex gap-8"
+              animate={{
+                x: isPaused ? 0 : ["0%", "-100%"],
+              }}
+              transition={{
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "linear",
+                duration: 30,
+              }}
+            >
+              {/* Double logos array for seamless infinite effect */}
+              {[...logos, ...logos].map((url, index) => (
+                <Card
+                  key={index}
+                  className="min-w-[180px] h-[140px] flex items-center justify-center shadow-md mb-1"
+                >
+                  <CardContent className="flex items-center justify-center">
+                    <img
+                      src={url}
+                      alt={`Logo ${index}`}
+                      className="h-20 w-auto object-contain mix-blend-darken"
+                    />
+                  </CardContent>
+                </Card>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
+
+const logos = [
+  "/certified_logo/iso.jpg",
+  "/certified_logo/rkcl.jpg",
+  "/certified_logo/Emblem_Rajasthan.png",
+  "/certified_logo/csc.png",
+  "/certified_logo/nisd.png",
+  "/certified_logo/msme.jpg",
+  "/certified_logo/digital_india.jpg",
+];

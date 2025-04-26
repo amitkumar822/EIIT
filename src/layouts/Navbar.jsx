@@ -22,40 +22,6 @@ export const Navbar = () => {
   return (
     <div className="relative z-50 text-white shadow-lg md:fixed w-full top-0">
       {/* Notification Bar */}
-      {/* <div className="flex bg-gradient-to-r from-orange-400 via-red-400 to-green-300 border-y border-white">
-       <span className="pl-2"> MON-SAT(10AM-6PM)</span> 
-        <div className="md:w-[75%] bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 mx-auto flex justify-between items-center py-1 px-4 overflow-hidden">
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: "-100%" }}
-            transition={
-              scrollingText
-                ? { repeat: Infinity, duration: 30, ease: "linear" }
-                : null
-            }
-            onMouseEnter={() => setScrollingText(false)}
-            onMouseLeave={() => setScrollingText(true)}
-            className="whitespace-nowrap text-xs font-medium"
-          >
-            📢 Admissions Open for 2025! Enroll in Computer & Vocational Courses
-            Today!
-          </motion.div>
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: "-100%" }}
-            transition={
-              scrollingText
-                ? { repeat: Infinity, duration: 30, ease: "linear" }
-                : null
-            }
-            onMouseEnter={() => setScrollingText(false)}
-            onMouseLeave={() => setScrollingText(true)}
-            className="whitespace-nowrap text-xs font-medium"
-          >
-            🎓 Exclusive Offers for Early Registrations. Apply Now!
-          </motion.div>
-        </div>
-      </div> */}
       <div className="flex items-center  bg-gradient-to-r from-yellow-600 via-red-500 to-pink-500  border-y border-white">
         <span className="md:pl-4 md:font-semibold md:text-sm text-[9px] text-white font-bold md:tracking-wide text-nowrap">
           Mon-Sat(10AM-6PM)
@@ -346,9 +312,9 @@ const navItems = [
     ],
   },
   {
-    label: "Study Center",
+    label: "Login",
     submenu: [
-      { title: "Apply", navLink: "/study-center/apply" },
+      { title: "Student Login", navLink: "/student-login" },
       // { title: "Most", navLink: "/study-center/most" },
     ],
   },

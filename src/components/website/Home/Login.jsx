@@ -9,7 +9,7 @@ import { useNavigate } from "react-router";
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  
+
   const [showPassword, setShowPassword] = useState(false);
   const {
     register,
@@ -17,12 +17,9 @@ const LoginPage = () => {
     formState: { errors },
   } = useForm();
 
-
   const onSubmit = async (formData) => {
     console.log("FormData: ", formData);
-    
   };
-
 
   return (
     <div className="h-[87.9vh] flex items-center justify-center bg-gradient-to-tr from-indigo-500 via-purple-600 to-pink-500 p-6">
