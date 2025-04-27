@@ -90,7 +90,7 @@ const ProgramEligibility = () => {
     <section className="relative flex flex-col lg:flex-row items-center justify-between px-4 md:px-12 py-16 bg-gradient-to-br from-[#e0f7fa] to-[#e1f5fe]">
       {/* Left Side */}
       <motion.div
-        className="w-full lg:w-full mt-12 lg:mt-0 border-2 border-dashed border-red-400 rounded-3xl p-2 max-w-2xl mx-auto"
+        className="w-full lg:w-full order-1 mt-12 lg:mt-0 border-2 border-dashed border-red-400 rounded-3xl p-2 max-w-2xl mx-auto"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, type: "spring" }}
