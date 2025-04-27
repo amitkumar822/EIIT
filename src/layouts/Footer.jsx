@@ -14,37 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
-  const socialLinks = [
-    { icon: <Facebook className="w-5 h-5" />, url: "#" },
-    { icon: <Twitter className="w-5 h-5" />, url: "#" },
-    { icon: <Instagram className="w-5 h-5" />, url: "#" },
-    { icon: <Linkedin className="w-5 h-5" />, url: "#" },
-    { icon: <Github className="w-5 h-5" />, url: "#" },
-  ];
-
-  const footerLinks = [
-    {
-      title: "Company",
-      links: ["About", "Careers", "Blog", "Pricing"],
-    },
-    {
-      title: "Quick Links",
-      links: ["About Us", "Departments", "Admissions", "Contact"],
-    },
-    {
-      title: "Academics",
-      links: ["Our Programs", "Admissions", "Scholarships", "Certifications"],
-    },
-    {
-      title: "Legal",
-      links: [
-        "Privacy Policy",
-        "Terms & Conditions",
-        "Refund Policy",
-        "Disclaimer",
-      ],
-    },
-  ];
+  
 
   const waveVariants = {
     initial: { x: 0 },
@@ -90,7 +60,7 @@ const Footer = () => {
       </motion.div>
 
       <div className="container mx-auto px-4 pt-24 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Footer links */}
           {footerLinks.map((section, index) => (
             <motion.div
@@ -102,14 +72,14 @@ const Footer = () => {
             >
               <h4 className="text-lg font-semibold mb-4">{section.title}</h4>
               <ul className="space-y-2">
-                {section.links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
+                {section.labels.map((item, index) => (
+                  <li key={index}>
+                    <Link
+                      to={item.navLink}
                       className="text-gray-300 hover:text-white transition-colors"
                     >
-                      {link}
-                    </a>
+                      {item.subTitle}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -211,6 +181,54 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const socialLinks = [
+  { icon: <Facebook className="w-5 h-5" />, url: "#" },
+  { icon: <Twitter className="w-5 h-5" />, url: "#" },
+  { icon: <Instagram className="w-5 h-5" />, url: "#" },
+  { icon: <Linkedin className="w-5 h-5" />, url: "#" },
+  { icon: <Github className="w-5 h-5" />, url: "#" },
+];
+
+const footerLinks = [
+  {
+    title: "Company",
+    labels: [
+      { subTitle: "About", navLink: "/about" },
+      { subTitle: "Careers", navLink: "/careers" },
+      { subTitle: "Blog", navLink: "/blog" },
+      { subTitle: "Pricing", navLink: "/pricing" },
+    ],
+  },
+  {
+    title: "Quick Links",
+    labels: [
+      { subTitle: "About Us", navLink: "/about" },
+      { subTitle: "Departments", navLink: "/departments" },
+      { subTitle: "Admissions", navLink: "/admissions/apply" },
+      { subTitle: "Contact Us", navLink: "/contact-us" },
+    ],
+  },
+  {
+    title: "Academics",
+    labels: [
+      { subTitle: "Our Programs", navLink: "/programs" },
+      { subTitle: "Admissions", navLink: "/admissions" },
+      { subTitle: "Scholarships", navLink: "/scholarships" },
+      { subTitle: "Certifications", navLink: "/certifications" },
+    ],
+  },
+  {
+    title: "Legal",
+    labels: [
+      { subTitle: "Privacy Policy", navLink: "/privacy-policy" },
+      { subTitle: "Terms & Conditions", navLink: "/terms-conditions" },
+      { subTitle: "Refund Policy", navLink: "/refund-policy" },
+      { subTitle: "Disclaimer", navLink: "/disclaimer" },
+    ],
+  },
+];
+
 
 // export const Footer2 = () => {
 //   return (

@@ -67,7 +67,7 @@ const router = createBrowserRouter(
         <Route path="/computer-courses/ms-office" element={<MSOfficeCoursePage />} />
         <Route path="/computer-courses/rs-cfa" element={<RSCFACoursePage />} />
         <Route path="/computer-courses/rs-csep" element={<RSCSEPCoursePage />} />
-        <Route path="/study-center/apply" element={<StudentJoinedSection />} />
+        <Route path="/admissions/apply" element={<StudentJoinedSection />} />
         <Route path="/scholarship-info" element={<ScholarshipInfo />} />
         <Route path="/legal-document" element={<LegalDocumentsPage />} />
         

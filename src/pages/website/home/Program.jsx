@@ -90,7 +90,7 @@ const ProgramEligibility = () => {
     <section className="relative flex flex-col lg:flex-row items-center justify-between px-4 md:px-12 py-16 bg-gradient-to-br from-[#e0f7fa] to-[#e1f5fe]">
       {/* Left Side */}
       <motion.div
-        className="w-full lg:w-full order-1 mt-12 lg:mt-0 border-2 border-dashed border-red-400 rounded-3xl p-2 max-w-2xl mx-auto"
+        className="w-full lg:w-full order-2 md:order-1 mt-12 lg:mt-0 border-2 border-dashed border-red-400 rounded-3xl p-2 max-w-2xl mx-auto"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, type: "spring" }}
@@ -104,7 +104,7 @@ const ProgramEligibility = () => {
       </motion.div>
 
       {/* Right side with SVG background */}
-      <div className="relative z-10 w-full lg:w-1/2 p-6 md:p-10 rounded-2xl shadow-md bg-gradient-to-br from-[#e0f7fa] to-[#e1f5fe] overflow-hidden">
+      <div className="relative z-10 order-1 md:order-2 w-full lg:w-1/2 p-6 md:p-10 rounded-2xl shadow-md bg-gradient-to-br from-[#e0f7fa] to-[#e1f5fe] overflow-hidden">
         {/* SVG Background */}
         <svg
           className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-10"
