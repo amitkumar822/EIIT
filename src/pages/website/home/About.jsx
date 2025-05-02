@@ -613,7 +613,7 @@ const LeadershipCards = ({ eiitMember }) => {
             <img
               src={member.avatar}
               alt={member.name}
-              className="w-20 h-20 rounded-full border-4 border-white shadow-md mr-4"
+              className="w-32 h-32 hover:scale-125 cursor-pointer transition-transform duration-300 rounded-full border-4 border-white shadow-md shadow-purple-400 mr-4"
             />
             <div>
               <h3 className="text-xl font-bold text-blue-900">{member.name}</h3>
@@ -663,7 +663,7 @@ const eiitMember = [
   },
   {
     id: 2,
-    name: "Rani Mam",
+    name: "Rajni Mam",
     position: "Managing Director",
     avatar: "/about/rani_Managing_Director.jpg",
     aboutUs:
@@ -704,6 +704,15 @@ const eiitMember = [
     avatar: "/about/marketing_head.jpg",
     aboutUs:
       "Heads marketing efforts, building the institute's brand and outreach strategies.",
+    phone: "",
+  },
+  {
+    id: 7,
+    name: "Har Datt Singh",
+    position: "Army Officer",
+    avatar: "/about/har_datt_singh.jpg",
+    aboutUs:
+      "A dedicated Indian Army officer who served the nation with bravery, discipline, and true patriotism.",
     phone: "",
   },
 ];

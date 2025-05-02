@@ -6,10 +6,10 @@ import EnquirySection from "./EnquirySection";
 const HomePage = () => {
   return (
     <>
-      {/* <TopBadgeBanner />
+      <TopBadgeBanner />
       <HeroSection />
       <Program />
-      <EnquirySection />  */}
+      <EnquirySection /> 
     </>
   );
 };

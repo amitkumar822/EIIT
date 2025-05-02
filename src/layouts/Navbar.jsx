@@ -263,6 +263,8 @@ export const Navbar = () => {
 
 const courses = {
   "Computer Courses": [
+    { title: "RS-CSEP", navLink: "/computer-courses/rs-csep" },
+    { title: "RS-CFA", navLink: "/computer-courses/rs-cfa" },
     { title: "RS-CIT", navLink: "/computer-courses/rs-cit" },
     { title: "CCC", navLink: "/computer-courses/ccc" },
     { title: "DFA", navLink: "/computer-courses/dfa" },
@@ -272,18 +274,16 @@ const courses = {
     { title: "ADFA", navLink: "/computer-courses/adfa" },
     { title: "CFA", navLink: "/computer-courses/cfa" },
     { title: "MS- OFFICE", navLink: "/computer-courses/ms-office" },
-    { title: "RS-CFA", navLink: "/computer-courses/rs-cfa" },
-    { title: "RS-CSEP", navLink: "/computer-courses/rs-csep" },
   ],
   "Vocational Courses": [
-    { title: "NTT", navLink: "/vocational-courses/ntt" },
-    { title: "Fire & Safety", navLink: "/vocational-courses/fire-safty" },
     { title: "YTT", navLink: "/vocational-courses/ytt" },
     { title: "ECCE", navLink: "/vocational-courses/ecce" },
+    { title: "NTT", navLink: "/vocational-courses/ntt" },
     {
       title: "Silai Certificate",
       navLink: "/vocational-courses/silai-certificate",
     },
+    { title: "Fire & Safety", navLink: "/vocational-courses/fire-safty" },
   ],
 };
 
@@ -302,13 +302,14 @@ const navItems = [
     label: "Courses",
     submenu: [
       {
-        label: "Computer Courses",
-        submenu: courses["Computer Courses"],
-      },
-      {
         label: "Vocational Courses",
         submenu: courses["Vocational Courses"],
       },
+      {
+        label: "Computer Courses",
+        submenu: courses["Computer Courses"],
+      },
+      
     ],
   },
   {
