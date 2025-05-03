@@ -8,14 +8,14 @@ const gallerySections = [
   {
     title: "EIIT Facilities Member.",
     icon: <Building2 className="text-blue-600" size={24} />,
-    images: Array.from({ length: 36 }, (_, i) => ({
+    images: Array.from({ length: 35 }, (_, i) => ({
       id: i + 1,
       src: `/gallery/human/${i + 1}.jpg`,
       alt: `${i + 1}`,
     })),
   },
   {
-    title: "Academic Activities",
+    title: "Academic Informations",
     icon: <BookOpen className="text-green-600" size={24} />,
     images: Array.from({ length: 16 }, (_, i) => ({
       id: i + 1,
@@ -24,7 +24,7 @@ const gallerySections = [
     })),
   },
   {
-    title: "EIIT Video",
+    title: "Academic Activities",
     icon: <Users className="text-purple-600" size={24} />,
     images: Array.from({ length: 6 }, (_, i) => ({
       id: i + 1,
@@ -131,6 +131,7 @@ const GalleryPage = () => {
             <div className="text-center mt-4">
               <Button
                 variant="outline"
+                className="cursor-pointer"
                 onClick={() =>
                   setViewAll((prev) => ({
                     ...prev,

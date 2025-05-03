@@ -162,6 +162,7 @@ const Footer = () => {
               <motion.a
                 key={index}
                 href={social.url}
+                target="_blanck"
                 className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.9 }}
@@ -183,7 +184,7 @@ const Footer = () => {
 export default Footer;
 
 const socialLinks = [
-  { icon: <Facebook className="w-5 h-5" />, url: "#" },
+  { icon: <Facebook className="w-5 h-5" />, url: "https://www.facebook.com/share/1BsR7yWYbb/?mibextid=wwXIfr" },
   { icon: <Twitter className="w-5 h-5" />, url: "#" },
   { icon: <Instagram className="w-5 h-5" />, url: "#" },
   { icon: <Linkedin className="w-5 h-5" />, url: "#" },
